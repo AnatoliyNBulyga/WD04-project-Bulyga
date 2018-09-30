@@ -1,0 +1,20 @@
+mixin indicator(name,complete,color)
+
+	if color
+		.indicator
+			svg.svg-box(viewBox="0 0 112 112")
+				circle.circle-1(cx="56" cy="56" r="50")
+				circle.circle-2(cx="56" cy="56" r="50" stroke-dashoffset=314.16*(1 - complete / 100) stroke=color)
+			.indicator__value #{name}	
+
+	else
+		
+		.indicator
+			svg.svg-box(viewBox="0 0 112 112")
+				circle.circle-1(cx="56" cy="56" r="50")
+				circle.circle-2(cx="56" cy="56" r="50" stroke-dashoffset=314.16*(1 - complete / 100) stroke="#eceff2")
+			.indicator__value #{name}		 
+
+
+
+	

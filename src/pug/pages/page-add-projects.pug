@@ -1,0 +1,43 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Добавить работы';
+	- var pageClass = 'content-page';
+
+block content
+	//- контейнер с классом section-page (_base.less) добавлен для стандартных отступов,
+	//- которые присутствуют практически на всех макетах
+	//- при отличие отступов необходимо добавлять класс модификатор section-page--mypage
+	.container.user-content.section-page
+		.row
+			.col-md-10.offset-md-1
+				h1 Добавить работу
+
+				+input('firstname','text', 'Введите название работы','Название')
+
+				p.label.mb-0.
+					Изображение
+				p.mt-0.
+					Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.
+				+inputFileUpload('Выбрать файл', 'Файл не выбран')
+
+				+textArea('message', 'type', 'Введите описание',' Содержание')
+
+				+textArea('message', 'type', 'Введите описание',' Результат')
+
+				+textArea('message', 'type', 'Введите описание',' Технологии')
+
+		.project-links
+			.row
+				.col-md-3.offset-md-1
+					+input('firstname','text', 'Введите ссылку','Ссылка на проект')
+				.col-md-3
+					+input('firstname','text', 'Введите ссылку','Ссылка на GitHub')
+
+		.project-buttons
+			.row
+				.col-md-12.offset-md-1
+					+button-save('Сохранить', '#')
+					+button('Отмена', '#')
+
+

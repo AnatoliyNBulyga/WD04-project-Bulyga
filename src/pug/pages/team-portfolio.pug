@@ -1,0 +1,39 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Мои работы в команде';
+	- var pageClass = 'content-page';
+
+block content
+	.container.user-content.section-page.team-portfolio
+		//- portfolio
+		.row.justify-content-between.align-items-center.pl-15.pr-15.mb-35
+			.title-1 
+				| Работы 
+				span которые сделал я и моя команда
+			+button-edit('Добавить работу', '#')
+		
+		.row.mb-50
+			.col-md-4
+				+card-portfolio('Portfolio-1.png', 'Верстка Landing Page', 'Смотреть кейс')
+			.col-md-4
+				+card-portfolio('Portfolio-2.png', 'Верстка UI набора', 'Смотреть кейс')
+			.col-md-4
+				+card-portfolio('Portfolio-3.png', 'Верстка интернет магазина', 'Смотреть кейс')
+		
+		.row.mb-50
+			.col-md-4
+				+card-portfolio('Portfolio-1.png', 'Верстка Landing Page', 'Смотреть кейс')
+			.col-md-4
+				+card-portfolio('Portfolio-2.png', 'Верстка UI набора', 'Смотреть кейс')
+			.col-md-4
+				+card-portfolio('Portfolio-3.png', 'Верстка интернет магазина', 'Смотреть кейс')
+
+		.row
+			.col-md-4
+				+card-portfolio('Portfolio-1.png', 'Верстка Landing Page', 'Смотреть кейс')
+			.col-md-4
+				+card-portfolio('Portfolio-2.png', 'Верстка UI набора', 'Смотреть кейс')
+			.col-md-4
+				+card-portfolio('Portfolio-3.png', 'Верстка интернет магазина', 'Смотреть кейс')
+

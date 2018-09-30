@@ -1,0 +1,9 @@
+.comment-add-block
+	.comment-add-block__left
+		+avatar-small('avatar-1.jpg')
+	.comment-add-block__right
+		h6.comment-add-block__right-title.
+			Юрий Ключевский
+		+notification('Комментарий не может быть пустым', 'error')
+		+commentAdd('add_comment', 'Присоединиться к обсуждению...')
+		+button('Опубликовать', '#')

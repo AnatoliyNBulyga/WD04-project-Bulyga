@@ -1,0 +1,60 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Уведомления - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+
+			.title Уведомления
+
+			h2.mb-20 Обычные уведомления
+
+			+notification('Успех', 'success')
+			pre.
+				+notification('Успех', 'success')
+			
+			+notification('Обновление', 'update')
+			pre.
+				+notification('Обновление', 'update')
+			
+			+notification('Ошибка', 'error')
+			pre.
+				+notification('Ошибка', 'error')
+			
+			h2.mb-10 Дополнительный класс
+			h4.mb-10 
+				em например выравнивание теста по центру
+
+			+notification('Текст по цетнру', 'update')(class="text-center")
+			pre.
+				+notification('Текст по цетнру', 'update')(class="text-center")
+			
+			h2.mb-10 Уведомления с комментариями
+			h4.mb-10
+				em *необходимо наличие внутренненго контента
+			+notification('Ошибка', 'error')
+				p Используйте другой email чтобы создать новый аккаунт.
+				p
+					| Или воспользуйтесь 
+					a(href="#!") восстановлением пароля 
+					|, чтобы войти на сайт. 
+			
+			pre.
+				+notification('Ошибка', 'error')
+					p Используйте другой email чтобы создать новый аккаунт.
+					p 
+						| Или воспользуйтесь 
+						a(href="#!") восстановлением пароля 
+						|, чтобы войти на сайт. 
+
+			+notification('Уведомление', 'update')
+				p Ваши данные были изменены.
+						
+			pre.
+				+notification('Уведомление', 'update')
+					p Ваши данные были изменены.

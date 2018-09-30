@@ -1,0 +1,29 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Блог - Пост - Добавить';
+	- var pageClass = 'content-page';
+
+block content
+	//- контейнер с классом section-page (_base.less) добавлен для стандартных отступов,
+	//- которые присутствуют практически на всех макетах
+	//- при отличие отступов необходимо добавлять класс модификатор section-page--mypage
+	.container.user-content.section-page
+		.row
+			.col-md-10.offset-md-1
+				h1.
+					Добавить пост
+				+input('firstname','text', 'Введите имя','Название')
+				.blog-edit__container
+					b.
+						Изображение
+					p.mb-10
+						|	Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.
+				.blog-edit__fileUp
+					+inputFileUpload('Выбрать файл', 'Файл не выбран')
+				+textArea('message', 'type', 'Введите город','Содержание')
+				+button('Сохранить', '#', 'save').mr-20
+				+button('Отмена', '#')
+				
+				
+				

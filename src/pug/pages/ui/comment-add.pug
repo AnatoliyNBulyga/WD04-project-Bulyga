@@ -1,0 +1,34 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Комментарии - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+
+			.section-ui
+				.user-content
+					h2 Оставить комментарий
+					.comment-add-block
+						.comment-add-block__left
+							+avatar-small('avatar-1.jpg')
+						.comment-add-block__right
+							h6.comment-add-block__right-title Юрий Ключевский
+							+notification('Комментарий не может быть пустым', 'error')
+							+commentAdd('add_comment', 'Присоединиться к обсуждению...')
+							+button('Опубликовать', '#')
+
+
+			pre.
+				.comment-add-block
+					.comment-add-block__left
+						+avatar-small('avatar-1.jpg')
+					.comment-add-block__right
+						h6.comment-add-block__right-title Юрий Ключевский
+						+notification('Комментарий не может быть пустым', 'error')	
+						+commentAdd('add_comment', 'Присоединиться к обсуждению...')
+						+button('Опубликовать', '#')

@@ -1,0 +1,35 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Блог';
+	- var pageClass = 'content-page';
+
+block content
+	.container.user-content.section-page.my-blog
+		.row.justify-content-between.align-items-center.pl-15.pr-15.mb-35
+			.title-1 Блог веб-разработчика
+			+button-edit('Добавить пост', '#')
+		
+		.row.mb-50
+			.col-md-4
+				+card-post('post-1.png', 'Поездка в New York', 'Читать')
+			.col-md-4
+				+card-post('post-2.png', 'Что я делал в долине', 'Читать')
+			.col-md-4
+				+card-post('post-3.png', 'Как я ходил в поход этим летом', 'Читать')
+		
+		.row.mb-50
+			.col-md-4
+				+card-post('post-1.png', 'Поездка в New York пример длинного поста ...', 'Читать')
+			.col-md-4
+				+card-post('post-2.png', 'Что я делал в долине', 'Читать')
+			.col-md-4
+				+card-post('post-3.png', 'Как я ходил в поход этим летом', 'Читать')
+
+		.row
+			.col-md-4
+				+card-post('post-1.png', 'Поездка в New York', 'Читать')
+			.col-md-4
+				+card-post('post-2.png', 'Что я делал в долине', 'Читать')
+			.col-md-4
+				+card-post('post-3.png', 'Как я ходил в поход этим летом', 'Читать')

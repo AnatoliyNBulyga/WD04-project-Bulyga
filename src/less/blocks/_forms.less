@@ -1,0 +1,169 @@
+.form {
+	
+}
+.form-group{
+	line-height: 24px;
+	font-size:16px;
+	margin-top: 30px;
+	width: 100%;
+  margin-bottom: 30px;
+	
+}
+
+// For page-add-projects.html
+.project-links .form-group {
+	margin-top: 0;
+}
+
+.label {
+  font-weight: 700; 
+}
+.input {
+	height: 42px;
+	width: 100%;
+	display: block;
+	margin-top:10px;
+	padding:15px 10px 15px 10px;	
+	border: 1px solid @border-color;
+	border-radius: @form-border-radius;
+	outline: none;
+	transition: @transition-form;
+		&:active, &:hover, &:focus {
+			border: 1px solid @border-color-active;
+			box-shadow: @form-box-shadow;
+	        }		
+		}
+.active-input{
+	border: 1px solid @border-color-active;
+ 	box-shadow: @form-box-shadow;
+             }
+.textarea {
+	display: block;	
+	margin-top:10px;
+	width: 100%;
+	font-size: 16px;
+	line-height: 24px;
+	border-radius: @form-border-radius;
+ 	border: 1px solid @border-color;
+ 	padding: 10px 15px 30px 15px;
+	display: block;
+	min-height: 110px;
+	outline: none;
+	transition:@transition-form;
+ 	
+	  &:active, &:hover, &:focus{
+			border: 1px solid @border-color-active;
+			box-shadow: @form-box-shadow;
+		    
+				}	
+		   }
+
+//custom for coomment-add.html
+.textarea.textarea--comment-add {
+	border: 2px solid @textarea-comment-add;
+	margin-bottom: 10px;
+
+	&::placeholder { 
+    opacity: .5; 
+	}
+
+	&:active, &:hover, &:focus {
+			border: 2px solid darken(@textarea-comment-add, 10%)!important;
+			box-shadow: none!important;
+	}	
+}
+
+.form-checkbox{		
+	 display: inline-block;
+	 margin-right: 5px;
+   			}
+.label-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    font-size: 16px;
+	cursor: pointer;
+		input {
+			position: absolute;
+			opacity: 0;
+			
+				&:checked ~ .checkmark:after {
+				display: block;
+					}
+ 				}	
+				}
+
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color:@bg-color-checkbox;
+	border-radius: @form-border-radius;
+			}
+.checkmark:after {
+    content: " ";
+    position: absolute;
+  	display: none;
+       }
+ .label-checkbox .checkmark:after {
+    left: 5px;
+    top: 3px;
+	content: '\2714';
+	color:@white;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	outline: 0;
+    outline-offset: 0;
+}
+
+.inputfile + label {
+	display: inline-block;
+	background-color: @border-color;
+	color: @white;
+	border-style: solid;
+	border-radius: 4px;
+	border: @border-color;
+	padding: 15px 12px;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+	background-color: #1e6791;
+}
+
+.inputfile + label {
+	cursor: pointer;
+	width: 160px;
+}
+
+.inputfile + label + span {
+	color: @upload-button;
+	vertical-align: top;
+	padding: 13px 0 0 10px;
+	display: inline-block;
+}
+
+.formInput-image {
+	position: relative;
+	display: inline-block;
+}
+
+.formInput-image__delete-button {
+	position: absolute;
+	bottom: 10px;
+	left: 150px;
+}

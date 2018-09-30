@@ -1,0 +1,59 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Главная';
+	- var pageClass = 'content-page';
+
+block content
+	.user-content.main-page
+		//- about me
+		.container.section-page.mb-80
+			.row
+				//- avatar
+				.col-md-3
+					+avatar('photo-big.jpg')
+				//- text block
+				.col-md-9
+					h1.main-page__title Емельян Казаков
+					p 
+						| Я веб разработчик из Казани. Мне 28 лет. 
+						br
+						| Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+
+					p 
+						| Этот сайт я сделал в рамках обучения в школе онлайн обучения 	WebCademy.
+						br
+						| Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+					h3.main-page__aboutme Что я умею
+					p 
+						| Меня привлекет Frontend разработка, это не только моя работа, но и хобби.
+						br
+						| Также знаком и могу решать не сложные задачи на Backend.
+					p
+						| Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.
+
+					+button('Подробнее', '#').mt-30
+		
+		.hr-line 
+		//- portfolio block
+		.container.section-page
+			
+			.title-1 Новые 
+				+link('работы','#')
+			.row.mb-70
+				.col-md-4
+					+card-portfolio('Portfolio-1.png', 'Верстка Landing Page', 'Смотреть кейс')
+				.col-md-4
+					+card-portfolio('Portfolio-2.png', 'Верстка UI набора', 'Смотреть кейс')
+				.col-md-4
+					+card-portfolio('Portfolio-3.png', 'Верстка интернет магазина', 'Смотреть кейс')
+
+			.title-1 Новые записи в 
+				+link('блоге','#')
+			.row
+				.col-md-4
+					+card-post('Post-1.png', 'Поездка в New York', 'Читать')
+				.col-md-4
+					+card-post('Post-2.png', 'Что я делал в долине', 'смотреть кейс')
+				.col-md-4
+					+card-post('Post-3.png', 'Как я ходил в поход этим летом', 'смотреть кейс')

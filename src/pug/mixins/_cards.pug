@@ -1,0 +1,17 @@
+mixin card-post(imgSrc, text, link)
+	.card.card--post&attributes(attributes)
+		.card__img
+			img(src="../img/blog/"+imgSrc alt="img")
+		.card__desc
+			.card__title
+				| #{text}
+			+button('Читать', link)
+
+mixin card-portfolio(imgSrc, text, link)
+	.card.card--portfolio&attributes(attributes)
+		.card__img
+			img(src="../img/blog/"+imgSrc alt="img")
+		.card__desc.pl-20.pr-20
+			.card__title
+				| #{text}
+			+button('Смотреть кейс', link)

@@ -1,0 +1,6 @@
+mixin radio-buttons(name, value, text)
+
+	label(class="form__label-radio")
+		input(class="form__input-radio" type="radio" name=name value=value)
+		span.form__radio
+		| #{text}

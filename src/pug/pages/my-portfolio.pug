@@ -1,0 +1,64 @@
+extends ../layouts/main-no-header.pug
+
+block variables
+	- var title = 'Мои персональыне работы';
+	- var pageClass = 'content-page';
+
+block content
+	//- контейнер с классом section-page (_base.less) добавлен для стандартных отступов,
+	//- которые присутствуют практически на всех макетах
+	//- при отличие отступов необходимо добавлять класс модификатор section-page--mypage
+	section.my-portfolio
+		.my-portfolio__gradient
+			.my-portfolio__logo.pt-55.mb-100.ml-50
+				+logo('Digital Lifestyle','Сайт IT специалиста')
+			.container.user-content
+				.row
+					.col-md-11.mt-25.mb-10.offset-md-1.my-portfolio__row
+						h1.
+							Верстка и frontend Интернет магазина
+						+button-edit('Редактировать', '#')
+				.row
+					.col-md-10.offset-md-1
+						.post.mb-0
+							.post-infom.mt-0
+								.post-info__subtitle.mb-55.my-portfolio__row
+									.post-info__author Емельян Казаков
+									.post-info__topic 
+										+postLink('Работы', '#') 
+									.post-info__date 16 Марта 2017
+							.post-img
+								+portfolioImg('ausmaids-home.jpg', 'ausmaids-home')
+	section.my-portfolio__description
+		.container.user-content
+			.row
+				.mb-50.col-md-10.my-portfolio__row.offset-md-1
+					.col-md-6.ml-md-0.pl-md-0
+						h3.
+							Кратко о проекте
+						p.
+							Сделана верстка и фронтэнд для интернет магазина мебели. Сверстано более 50-ти страниц. Сделаны все эффекты и интерактив. В работе использованы препроцессоры pug и less. Интерактив написан на JavaScript. Весь проект протестирован на своместимость, начиная с IE9. Для старых браузеров использован подход Graceful Degradation.
+						h6.
+							Время работы над проектом: 6 недель
+						h6.
+							Страниц сверстано: 52 страницы
+						h6.
+							Бюджет проекта: до 60 000 рублей
+						h3.
+							Результат
+						p.
+							Проект сделан в срок. Заказчик доволен. Сайт запущен, работает и уже радует покупками посетителей и владельцев бизнеса.
+					.col-md-4
+						h3.
+							Технологии
+						+navPortfolio().ml-10
+						h3.
+							Ссылка на проект
+						+link('http://magnum-store.ru', '#')
+						h3.
+							Код на github
+						+link('https://github.com/pozitive/magnumstore/', '#')
+			.row
+				.col-md-10.my-portfolio__buttons-nav.offset-md-1
+						+button-icon-left('Все работы', '#', 'fas fa-arrow-left')
+						+button-icon-right('Следующая работа', '#', 'fas fa-arrow-right')

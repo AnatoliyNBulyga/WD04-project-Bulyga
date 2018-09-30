@@ -1,0 +1,18 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Комментарии - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+			
+			h4.mb-50.mt-30 Комментарии
+			.comments-title.mb-25 2 комментария			
+				
+			+comments-item('avatar-2.jpg',' Джон До', ' 05 мая 2017', '15:45', 'Замечательный парк, обязательно отправлюсь туда этим летом.')
+
+			+comments-item('avatar-3.jpg',' Джон До', ' 05 мая 2017', '15:45', 'Замечательный парк, обязательно отправлюсь туда этим летом.')

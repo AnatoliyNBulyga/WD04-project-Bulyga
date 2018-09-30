@@ -1,0 +1,69 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Формы - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+			.section-ui
+				.title Элементы формы
+				p
+					b.
+						Чекбоксы
+				+checkbox('mark', 'Запомни меня')
+				p.
+					Чекбокс в неактивном состоянии.  
+				pre.
+					+checkbox('mark', 'Запомни меня')
+			.section-ui
+				+checkbox('mark', 'Запомни меня','checked')
+				p.
+					Миксин, который отвечает за  автоматическое включение "галочки" у чекбокса. Так же, это пример чекбокса в активном состояние.  
+				pre.
+					+checkbox('mark', 'Запомни меня','checked')
+
+			p 
+				strong Радиокнопки
+				form.form#loginForm
+					fieldset
+						+radio-buttons("radio-group-1", "znachenie-1", "Option-1")
+						+radio-buttons("radio-group-1", "znachenie-2", "Option-2")
+						+radio-buttons("radio-group-1", "znachenie-3", "Option-3")
+			
+			pre.
+				+radio-buttons("radio-group-1", "znachenie-1", "Option-1")
+
+
+			.section-ui
+				+input('firstname','text', 'Введите имя','Поле для ввода')
+				pre.
+					+input('firstname','text', 'Введите имя','Поле для ввода')
+			
+			.section-ui
+				+textArea('message', 'type', 'Введите сообщение',' Сообщение - Textarea') 
+				pre.
+					+textArea('message', 'type', 'Введите сообщение',' Сообщение - Textarea') 
+
+			.section-ui 
+				p.label Изображение
+				p Изображение jpg или png, размером больше чем 100х100 пикселей, и весом до 2Мб.
+				
+				+inputFileUpload('Выбрать файл', 'Файл не выбран')
+			
+			pre.
+				+inputFileUpload('Выбрать файл', 'Файл не выбран')
+			
+			.section-ui 
+				div.formInput-image
+					img(src="../img/blog/img-post-uploaded.jpg")
+					.formInput-image__delete-button
+						+button-removesmall('Удалить', '#')
+			pre.
+				div.formInput-image
+					img(src="../img/blog/img-post-uploaded.jpg")
+					.formInput-image__delete-button
+						+button-removesmall('Удалить', '#')

@@ -1,0 +1,37 @@
+extends ../layouts/login.pug
+
+block variables
+	- var title = 'Вход на сайт';
+	- var pageClass = 'login-page';
+
+block content
+
+	.login-header
+		+logo('Супер сайт')
+		+link('Регистрация', 'registration.html').login-header__link
+	
+	form.login-form
+		h1.text-center.login-form__header Вход на сайт
+		+notification('Введите email', 'error').mb-20
+		+notification('Неверный формат email', 'error').mb-20
+		+notification('Введите пароль', 'error').mb-20
+		+notification('Неверный email или пароль', 'error')
+			p Введите верные данные для входа или воспользуйтесь
+				a(href="#!") восстановлением пароля 
+				|, чтобы войти на сайт.
+		+inputFormRegistration('email','email', 'Email')
+		+inputFormRegistration('password','password', 'Пароль')
+		.login-form-links
+			+link('Забыл пароль', '#')
+		.text-center.pt-30
+			+button-enter('Войти', '#')(class="pl-50 pr-50")
+	
+	.login-page-footer
+		.footer__item.footer__copyright
+			p.text-center © Юрий Ключевский #[br]
+			p.text-center
+				| Создано с
+				i.fas.fa-heart.animation-pulse
+				| в 
+				a(href='http://webcademy.ru' target='_blank') #[span WebCademy.ru] 
+				| в 2018 году

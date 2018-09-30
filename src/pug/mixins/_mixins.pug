@@ -1,0 +1,46 @@
+// Разные миксины по одному, которые понадобятся. Для логотипа, бейджа, и т.д.
+mixin logo(title, subtitle)
+	.logo
+		.logo-icon
+			i(class = "far fa-paper-plane")
+		.logo_description
+			a(href="#").header-logo__title #{title}
+			a(href="#").header-logo__sub #{subtitle}
+
+mixin footerNavlink(link, name)
+	li
+		a(href= link) #{name}
+    
+mixin footerIconLink(link, className)
+	a(href= link target='_blank')
+		i(class= className)
+
+mixin blogImg(blogImg, altDesc)
+	img(src="../img/blog/"+ blogImg alt= altDesc)
+
+mixin portfolioImg(blogImg, altDesc)
+	img(src="img/my-portfolio/"+ blogImg alt= altDesc) 
+	
+mixin footerNavlink(link, name)
+	li
+		a(href= link) #{name}
+    
+mixin footerIconLink(link, className)
+	a(href= link target='_blank')
+		i(class= className)
+
+mixin blogImg(blogImg, altDesc)
+	img(src="../img/blog/"+ blogImg alt= altDesc)
+
+	
+mixin navPortfolio()
+	nav.my-portfolio__nav
+		ul
+			li.my-portfolio__item
+				| HTML5, CSS3.
+			li.my-portfolio__item
+				| JavaScript, jQuery.
+			li.my-portfolio__item
+				| LESS, PUG, Gulp, npm, bower.
+
+

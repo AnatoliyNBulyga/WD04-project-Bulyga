@@ -1,0 +1,43 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Обо-мне. Редактировать - Технологии';
+	- var pageClass = 'content-page';
+
+block content
+	.container.user-content.section-page
+		h1 Редактировать - Технологии
+		.section-ui
+			form.edit-tech
+				.section-ui
+					.row
+						.col-lg-2
+							+editTechInput('HTML','','html','%')
+						.col-lg-2
+							+editTechInput('CSS3','','css3','%')
+						.col-lg-2
+							+editTechInput('JS', '','js','%')
+						.col-lg-2
+							+editTechInput('jQuery','','jquery','%')
+				.section-ui
+					.row
+						.col-lg-2
+							+editTechInput('PHP','','php','%')
+						.col-lg-2
+							+editTechInput('MySql','','mysql','%')
+				.section-ui
+					.row
+						.col-lg-2
+							+editTechInput('Git','','git','%')
+						.col-lg-2
+							+editTechInput('Gulp','','gulp','%')
+						.col-lg-2
+							+editTechInput('Bower','','bower','%')
+						.col-lg-2
+							+editTechInput('WebPack','','webpack','%')
+				.section-ui
+					.row
+						.col-lg-1.mr-70
+							+button-save('Сохранить', '#')
+						.col-lg-2
+							+button('Отмена', '#')

@@ -1,0 +1,46 @@
+mixin button(text, link)
+    a(class="button" href=link)&attributes(attributes) #{text}
+
+mixin button-icon-right(text, link, icon)
+    a(class="button button--icon-right" href=link)&attributes(attributes) #{text}
+        i(class= icon)
+
+mixin button-icon-left(text, link, icon)
+    a(class="button button--icon-left" href=link)&attributes(attributes)
+        i(class= icon)
+        | #{text}
+
+mixin button-edit(text, link)
+    a(class="button button--edit" href=link)&attributes(attributes) #{text}
+
+mixin button-remove(text, link)
+    a(class="button button--remove" href=link)&attributes(attributes) #{text}
+
+mixin button-save(text, link)
+    a(class="button button--save" href=link)&attributes(attributes) #{text}
+
+mixin button-enter(text, link)
+    a(class="button button--enter" href=link)&attributes(attributes) #{text}
+
+mixin button-profile(text, link)
+    a(class="button button--profile" href=link)&attributes(attributes) #{text}
+
+mixin button-small(text, link)
+    a(class="button button--small" href=link)&attributes(attributes) #{text}
+
+mixin button-editsmall(text, link)
+    a(class="button button--small button--edit" href=link)&attributes(attributes) #{text}
+
+mixin button-savesmall(text, link)
+    a(class="button button--small button--save" href=link)&attributes(attributes) #{text}
+    
+mixin button-removesmall(text, link)
+    a(class="button button--small button--remove" href=link)&attributes(attributes) #{text}
+
+mixin button(text, link, mode, size)
+    if mode && size
+        a(href=link class="button button--" + mode + " button--" + size)&attributes(attributes) #{text}
+    else if mode
+        a(href=link class="button button--" + mode)&attributes(attributes) #{text}
+    else
+        a(href=link class="button")&attributes(attributes) #{text}

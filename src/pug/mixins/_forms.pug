@@ -1,0 +1,41 @@
+mixin checkbox(name, text, status)
+		if status === 'checked'
+			.form-checkbox
+				label.label-checkbox
+					input.checkbox(type='checkbox', name = name, checked)
+					span.checkmark
+					| #{text}
+		else
+			.form-checkbox
+				label.label-checkbox
+					input.checkbox(type='checkbox', name = name)
+					span.checkmark
+					| #{text}
+					
+
+mixin input(name, type, placeholder,label)
+	div.form-group
+		label.label #{label}
+			input.input(name=name,type=type, placeholder=placeholder)
+
+mixin textArea(name, type, placeholder,label)
+	div.form-group
+		label.label #{label}
+			textarea.textarea(name=name,type=type, placeholder=placeholder)
+
+mixin inputFileUpload(labelText, text)
+	input.inputfile(type="file" name="file" id="file")
+	label(class="label-input-file" for="file") #{labelText}
+	span #{text}
+
+mixin commentAdd(name,placeholder)
+	textarea.textarea.textarea--comment-add(name=name, placeholder=placeholder)
+
+mixin editTechInput(text, type, name, labeltext)
+	p.edit-tech-text
+		b #{text}
+	input.input.edit-tech-input(name=name, type, placeholder="0")
+	label.edit-tech-label #{labeltext}
+
+mixin inputFormRegistration(name, type, placeholder)
+	input.input-form-registration(name=name, type=type, placeholder=placeholder)

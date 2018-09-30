@@ -1,0 +1,20 @@
+mixin link(text, link)
+	a(target!=attributes.target, class!=attributes.class href=link ) #{text}
+
+mixin linkLeftPanel(text, link)
+	a.left-panel-nav__link(target!=attributes.target, class!=attributes.class href=link ) #{text}
+
+mixin linkList(text, link)
+	li
+		a(target!=attributes.target, class!=attributes.class href=link ) #{text}
+
+
+mixin linkNav(text, link)
+	li.header-nav__item
+		a.header-nav__link(target!=attributes.target, class!=attributes.class href=link ) #{text}
+
+mixin postLink(text, link)
+	a.post-info__link(target!=attributes.target, class!=attributes.class href=link ) #{text}
+
+mixin messageLink(text, link)
+	a.user-message__link(target!=attributes.target, class!=attributes.class href=link ) #{text}

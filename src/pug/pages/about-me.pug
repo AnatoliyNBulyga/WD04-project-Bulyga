@@ -1,0 +1,92 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Обо мне';
+	- var pageClass = 'content-page';
+
+block content
+	.container.user-content.section-page.about-me__description-wrapper.mb-60
+
+		//- -START- Блок с фото и описанием
+		.row
+			.col-md-3
+				+avatar('photo-big.jpg')
+			.col-md-9
+				.about-me__title-container.justify-content-between
+					.title-1.about-me__title-container-item Емельян Казаков
+					.button-edit__about-me-item
+						+button-edit('Редактировать', '#')
+				.about-me__description
+					p Я веб разработчик из Казани. Мне 28 лет.#[br]Занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+					p Этот сайт я сделал в рамках обучения в школе онлайн обучения WebCademy.#[br]Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+					.title-3.mt-50.mb-10 Что я умею
+					p.about-me__description-paragraph Меня привлекет Frontend разработка, это не только моя работа, но и хобби.#[br]Также знаком и могу решать не сложные задачи на Backend.
+					p Знаком и использую современный workflow, работаю с репозиториями git и сборкой проекта на gulp.
+		//- -END- Блок с фото и описанием
+		
+		//- START- Блок Технологии
+	.user-content.section-page.about-me__tech-wrapper.indicators-section.dark.mt-60.pt-50.mb-80.pb-40
+		.container
+			.row.justify-content-between.align-items-center
+				.col-md-9.offset-md-3
+					.about-me__tech-title-container.justify-content-between.mb-40
+						.about-me__tech-title-container-block
+							.title-3 Технологии #[br]
+							p.about-me__tech-title-container-item Которые использую в работе
+						.button-edit__about-me-item
+							+button-edit('Редактировать', '#')
+			.row.justify-content-between.align-items-center
+				.col-md-3.text-center
+					.title-3.pb-40 Frontend
+				.col-md-9
+					.indicators-section.dark
+						.indicators-row
+							+indicator("HTML5", 90,"#3aaa35")
+							+indicator("CSS3", 90,"#3aaa35")
+							+indicator("JS", 90,"#3aaa35")
+							+indicator("Jquery", 90,"#3aaa35")
+			.row.justify-content-between.align-items-center
+				.col-md-3.text-center
+					.title-3.pb-40 Backend
+				.col-md-9
+					.indicators-section.dark
+						.indicators-row
+							+indicator("PHP", 90,"#009cf5")
+							+indicator("MySql", 90,"#009cf5")
+			.row.justify-content-between.align-items-center
+				.col-md-3.text-center
+					.title-3.pb-40 Workflow
+				.col-md-9
+					.indicators-section.dark
+						.indicators-row
+							+indicator("Git", 90,"#ffcc00")
+							+indicator("Gulp", 90,"#ffcc00")
+							+indicator("Bower", 90,"#ffcc00")
+							+indicator("WebPack", 90,"#ffcc00")
+		//- END- Блок Технологии
+
+		//- -START- Блок Опыт работы
+	.container.user-content.section-page.about-me__jobs-list-wrapper
+		.row
+			.col-md-9.offset-md-3
+				.about-me__jobs-container.justify-content-between.mb-30
+					.title-1.about-me__jobs-container-item Опыт работы
+					.button-edit__about-me-item
+						+button-edit('Редактировать', '#')
+				ul.about-me__definition-list
+					li.about-me__definition-list__item.pb-30
+						.about-me__definition-list__def февраль 2017  — по настоящее время
+						.title-4.about-me__definition-list__title Frontend разработчик, Вконтактe, mail.ru group
+						.about-me__definition-list__description
+							p Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.
+					li.about-me__definition-list__item.pb-30
+						.about-me__definition-list__def сентябрь 2015 — январь 2017
+						.title-4.about-me__definition-list__title Разработчик интерфейсов, Яндекс
+						.about-me__definition-list__description
+							p Работы в проекте Яндекс Музыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.
+					li.about-me__definition-list__item
+						.about-me__definition-list__def март 2013 — август 2015
+						.title-4.about-me__definition-list__title Веб-разработчик, Cloud studio
+						.about-me__definition-list__description
+							p Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазинов. Участие в разработке CRM системы “Sky CRM”. Стек используемых технологий: Git, JS, Angular.
+		//- -END- Блок Опыт работы

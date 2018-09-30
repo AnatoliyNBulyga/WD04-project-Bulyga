@@ -1,0 +1,18 @@
+// Секция под шапку администратора
+
+.header-admin
+	.user-info
+		+avatar-small('avatar-1.jpg')
+		.user-info__data.user-content.ml-15
+			h6.mb-1 Юрий Ключевский
+			+badgeLink("#", 'Администратор')
+	
+	ul.admin-nav.section-ui
+		+admin-nav-item("http://yandex.ru", 'fas fa-plus-circle', 'Пост')
+		+admin-nav-item("#", 'fas fa-plus-circle', 'Работа')
+		+admin-nav-item("#", 'fas fa-edit', 'Обо мне')
+		+admin-nav-item("#", 'fas fa-edit', 'Контакты')
+		+admin-nav-item("#", 'fas fa-envelope', 'Сообщения')
+
+	ul.admin-nav.admin-nav--right.section-ui
+		+admin-nav-item("#", 'fas fa-sign-out-alt', 'Выход')

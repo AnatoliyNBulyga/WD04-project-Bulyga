@@ -1,0 +1,37 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Контакты';
+	- var pageClass = 'content-page';
+
+block content
+	.container.contacts-edit.section-page
+		.contacts-edit-block.user-content
+			.title-1 Редактировать данные
+			.row
+				.col-md-3
+					+input('firstname','text', 'Введите имя','Имя')
+					+input('firstname','text', 'Введите фамилию','Фамилия')
+
+				.col-md-3
+					+input('firstname','text', 'Введите email','Email')
+					+input('firstname','text', 'Введите skype','Skype')
+
+			.row
+				.col-md-3
+					+input('firstname','text', 'Введите ссылку на профиль','Вконтакте')
+				.col-md-3
+					+input('firstname','text', 'Введите ссылку на профиль','Facebook')
+				.col-md-3
+					+input('firstname','text', 'Введите ссылку на профиль','GitHub')
+				.col-md-3
+					+input('firstname','text', 'Введите ссылку на профиль','Twitter')
+				.col-md-3
+					+input('firstname','text', 'Введите телефон','Телефон')
+				.col-md-3
+					+input('firstname','text', 'Введите адрес','Адрес')
+
+			.contacts-edit-btn
+				+button-save('Сохранить', '#')(class='mr-20')
+				+button('Отмена', '#')
+

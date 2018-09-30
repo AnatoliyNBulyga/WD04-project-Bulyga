@@ -1,0 +1,10 @@
+mixin job-item(date, btnText, title, text)
+
+	.job-item.mb-20
+		.job-item__top
+			.job-item__date #{date}
+			a(class="button button--remove" href=link) #{btnText}
+		.job-item__title #{title}
+		.job-item__text
+			p.
+				#{text}

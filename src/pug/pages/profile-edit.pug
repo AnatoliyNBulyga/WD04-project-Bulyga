@@ -1,0 +1,26 @@
+extends ../layouts/main-user.pug
+
+block variables
+	- var title = 'Профиль пользователя - редактирование';
+	- var pageClass = 'content-page';
+
+block content
+	//- контейнер с классом section-page (_base.less) добавлен для стандартных отступов,
+	//- которые присутствуют практически на всех макетах
+	//- при отличие отступов необходимо добавлять класс модификатор section-page--mypage
+	.container.user-content.section-page
+		.col-md-12.offset-md-1
+			h1 Редактировать профиль
+		.col-md-4.offset-md-1
+			+input('firstname','text', 'Введите имя','Имя')
+			+input('firstname','text', 'Введите фамилию','Фамилия')
+			+input('firstname','text', 'Введите email','Email')
+		.col-md-12.offset-md-1
+			p <strong>Фотография</strong>
+			p Изображение jpg или png, размером больше чем 100х100 пикселей, и весом до 2мб.
+		.col-md-4.offset-md-1
+			+inputFileUpload('Выбрать файл', 'my-lovely-photo.jpg')
+			+input('firstname','text', 'Введите страну','Страна')
+			+input('firstname','text', 'Введите город','Город')
+			+button-save('Сохранить', '#')
+			+button('Отмена', '#')(class='ml-45')

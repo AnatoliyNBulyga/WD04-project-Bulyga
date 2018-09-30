@@ -1,0 +1,33 @@
+extends ../layouts/main-user.pug
+
+block variables
+	- var title = 'Профиль пользователя';
+	- var pageClass = 'content-page';
+
+block content
+	//- контейнер с классом section-page (_base.less) добавлен для стандартных отступов,
+	//- которые присутствуют практически на всех макетах
+	//- при отличие отступов необходимо добавлять класс модификатор section-page--mypage
+	.container.user-content.section-page
+		.row.align-items-center
+			.col
+				.title-1 Профиль
+			.col.text-right
+				+button-edit('Редактировать', '#')
+		.row
+			.col-md-auto
+				+avatar('photo-big.jpg')
+			.col.ml-35
+				.user-description.mb-20
+					.user-description__title Имя и фамилия
+					.user-description__desc Емельян Казаков
+				.user-description.mb-20
+					.user-description__title Email
+					.user-description__desc pilat@maill.ru
+				.user-description.mb-20
+					.user-description__title Страна, Город
+					.user-description__desc Россия, Казань
+		.title-2.mt-30 Комментарий пользователя
+		+comments-item-no-avatar(' Джон До', ' 05 мая 2017', '15:45', 'Замечательный парк, обязательно отправлюсь туда этим летом.')
+		+comments-item-no-avatar("Ноутбук для веб-разработчиков", "15 Мая 2017 ", '10:02', "Замечательный парк, обязательно отправлюсь туда этим летом.")
+		+comments-item-no-avatar("Настройка Sublime", "12 Мая 2017 ","20:39", "Замечательный парк, обязательно отправлюсь туда этим летом.")

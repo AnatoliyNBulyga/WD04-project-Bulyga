@@ -1,0 +1,74 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Контакты';
+	- var pageClass = 'content-page';
+
+block content
+	.container.user-content.section-page
+		
+		//- блок с кнопками
+		.row.justify-content-end
+			+button-edit('Редактировать', '#')(class="mr-20")
+			+button('Сообщения', '#')
+		//--- блок с кнопками
+		
+		.row
+			//- блок контакты
+			.col-md-5
+				.contacts__title.title-1 Контакты
+				
+				.row.align-items-start.mb-15
+					.col-md-5
+						h6.contacts__item-name Email
+					.col-md-7
+						.contacts__item-email
+							a(href='#!') webdev-ninja@mail.ru
+				
+				.row.align-items-start.mb-15
+					.col-md-5
+						h6.contacts__item-name Skype
+					.col-md-7
+						.contacts__item-skype
+							a(href='#!') webdev-ninja
+
+				.row.align-items-start.mb-15
+					.col-md-5
+						h6.contacts__item-name Социальные сети
+					.col-md-7
+						.contacts__item-social
+							a(href='#!') Профиль Вконтакте
+							a(href='#!') Профиль Facebook
+
+				.row.align-items-start.mb-15
+					.col-md-5
+						h6.contacts__item-name Телефон
+					.col-md-7
+						.contacts__item-phone +595-456-123
+
+				.row.align-items-start
+					.col-md-5
+						h6.contacts__item-name Адрес
+					.col-md-7
+						.contacts__item-address Россия, Московская обл. г. Зеленоград
+			//--- блок контакты
+				
+			//- блок форма
+			.offset-md-1.col-md-4
+				.contacts__title.title-1 Связаться со мной
+				form(class="form-contacts" action="")
+					+input('firstname','text', 'Введите имя')
+					+input('firstname','text', 'Email')
+					+textArea('message', 'type', 'Cообщение') 
+					.form-contacts__file-upload
+						.file-upload__title.title-6 Прикрепить файл
+						.file-upload__comment div jpg, png, pdf, doc, весом до 2Мб.
+						+inputFileUpload('Выбрать файл', 'Файл не выбран')
+						input(class="button button--save" type="submit" value="Отправить")
+			//--- блок форма
+	//- MAP
+	.map(id='map')
+	//- MAP
+	
+
+

@@ -1,0 +1,23 @@
+// Секция под шапку пользователя на сайт 
+
+header.header
+	.header-container
+		.header-top
+			+logo('Digital Lifestyle','Сайт IT специалиста')
+			div.header-right__col
+				+avatar-small('photo-big.jpg')
+				div.header-user
+					p.header-user__name
+						|	Юрий Ключевский
+					span
+						|	пользователь
+					div.header-user__but
+						+button-profile('Профиль', '#')
+						+button-profile('Выход', '#')
+		nav.header-nav
+			ul
+				+linkNav('Главная', '#')
+				+linkNav('Обо мне', '#')
+				+linkNav('Работы', '#')
+				+linkNav('Блог', '#').header-nav__active
+				+linkNav('Контакты', '#')

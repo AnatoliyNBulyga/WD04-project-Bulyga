@@ -1,0 +1,39 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Шапка Администратор - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard dark-bg';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	
+	.main-wrapper
+		.container.container--left
+			.title.mb-60 Шапка Администратор
+		
+		.section-ui.mb-50.dark-bg(style="background: #1e6791;")
+			include ../../sections/header-admin.pug
+
+		
+		.title-medium Подключение из файла
+		pre include ../../sections/header-admin.pug
+
+		.title-medium Код из файла	sections/header-admin.pug
+		pre.
+			.header-admin
+				.user-info
+					+avatar-small('avatar-1.jpg')
+					.user-info__data.user-content.ml-15
+						h6.mb-1 Юрий Ключевский
+						+badgeLink("#", 'Администратор')
+				
+				ul.admin-nav.section-ui
+					+admin-nav-item("http://yandex.ru", 'fas fa-plus-circle', 'Пост')
+					+admin-nav-item("#", 'fas fa-plus-circle', 'Работа')
+					+admin-nav-item("#", 'fas fa-edit', 'Обо мне')
+					+admin-nav-item("#", 'fas fa-edit', 'Контакты')
+					+admin-nav-item("#", 'fas fa-envelope', 'Сообщения')
+
+				ul.admin-nav.admin-nav--right.section-ui
+					+admin-nav-item("#", 'fas fa-sign-out-alt', 'Выход')

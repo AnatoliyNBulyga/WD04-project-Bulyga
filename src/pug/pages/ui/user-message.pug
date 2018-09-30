@@ -1,0 +1,41 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Сообщение от пользователя - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+			.title.mb-0 Сообщение от пользователя 
+			.section-ui
+				.user-message
+					.user-message__top
+						.user-message__date 22 Августа 2017
+						+button-removesmall('Удалить', '#')
+					.user-message__header
+						.user-message__name Джон До 
+						+messageLink('johndoe@gmail.com', 'mailto:johndoe@gmail.com')
+					.user-message__text
+						p
+							| Привет, как дела? наконец то написал тебе. Посмотри ТЗ нового проекта. Делаем стартап в B2B сфере, юриспуриденция, контракты, право. Инвестиции уже получены и нам нужен классный фронт энд разработчик, как раз - такой как ты. Будет круто если сможешь поработать с нами.
+					.user-message__bottom
+						.user-message__attachments Прикрепленные файлы: 
+						+link('Avrora-platform.pdf', '#').user-message__attachments-name
+				br
+				br
+				pre.
+					.user-message__top
+						.user-message__date 22 Августа 2017
+						+button-removesmall('Удалить', '#')
+					.user-message__header
+						.user-message__name Джон До 
+						+messageLink('johndoe@gmail.com', 'mailto:johndoe@gmail.com')
+					.user-message__text
+						p
+							| Привет, как дела? наконец то написал тебе. Посмотри ТЗ нового проекта. Делаем стартап в B2B сфере, юриспуриденция, контракты, право. Инвестиции уже получены и нам нужен классный фронт энд разработчик, как раз - такой как ты. Будет круто если сможешь поработать с нами.
+					.user-message__bottom
+						.user-message__attachments Прикрепленные файлы: 
+						+link('Avrora-platform.pdf', '#').user-message__attachments-name

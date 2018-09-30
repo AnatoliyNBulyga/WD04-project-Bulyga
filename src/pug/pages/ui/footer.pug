@@ -1,0 +1,49 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Подвал сайта - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+			.title Подвал сайта
+
+		p Футер подключаем из отдельного файла, через include
+
+		include ../../sections/footer.pug
+
+		.section-ui.mt-20
+			.title-medium Подключение из файла
+		pre include ../../sections/footer.pug
+
+		.section-ui
+			.title-medium Разметка
+		pre.
+			footer
+			.footer.pt-55.pb-70
+				.container
+					.row
+						.footer__item.footer__copyright.col-lg-5
+							p © WebDev Team04 - Code Heroes br
+							p
+								| Создано с 
+								i.fas.fa-heart.animation-pulse
+								| в 
+								a(href='http://webcademy.ru' target='_blank') span WebCademy.ru 
+								| в 2018 году
+						nav.footer-nav.col-lg-3
+							ul
+								+footerNavlink('index.html', 'Главная')
+								+footerNavlink('index.html', 'Обо мне')
+								+footerNavlink('index.html', 'Работы')
+								+footerNavlink('index.html', 'Блог')
+								+footerNavlink('index.html', 'Контакты')
+						.footer__item.footer__icons.col-lg-4
+							+footerIconLink('#', 'fab fa-vk')
+							+footerIconLink('#', 'fab fa-twitter')
+							+footerIconLink('#', 'fab fa-youtube')
+							+footerIconLink('#', 'fab fa-instagram')
+							+footerIconLink('#', 'fab fa-facebook-f')

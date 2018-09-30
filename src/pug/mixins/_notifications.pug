@@ -1,0 +1,9 @@
+mixin notification(title, mode)
+	if block
+		//- &attributes(attributes) используется для добавления дополнительных классов
+		.notify.no-paddings&attributes(attributes) 
+			div(class="notify no-radius-bottom notify--" + mode   ) #{title}
+			.notify.no-radius-top
+				block
+	else
+		div(class="notify notify--" + mode   )&attributes(attributes) #{title}

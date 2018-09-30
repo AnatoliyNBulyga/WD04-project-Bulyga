@@ -1,0 +1,6 @@
+mixin admin-nav-item(link, iconClass, text)
+
+	li.admin-nav-item
+		a.admin-nav__link(href= link)
+			i(class= ""+ iconClass)
+			span.ml-10 #{text}

@@ -1,0 +1,44 @@
+extends ../layouts/main.pug
+//-block variable
+	-var title = "Редактирование-опыт работы";
+
+block content
+	.section-page
+		.container
+			.row
+				.col-md-10.offset-md-1.user-content
+					.title-1.mb-35 Редактировать - Опыт работы
+					.aboutme-job-block.mb-35
+						.user-message.mb-20
+							.user-message__top
+								.user-message__date февраль 2017  — по настоящее время
+								+button-removesmall('Удалить', '#')
+							.user-message__header
+								.user-message__name Frontend разработчик, Вконтактe, mail.ru group 
+								
+							.user-message__text
+								p
+									| Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента
+
+						.user-message.mb-20
+							.user-message__top
+								.user-message__date февраль 2017  — по настоящее время
+								+button-removesmall('Удалить', '#')
+							.user-message__header
+								.user-message__name Frontend разработчик, Вконтактe, mail.ru group 
+								
+							.user-message__text
+								p
+									| Работы в команде Вконтакте. Работал в команде над обновление сервиса Музыка, работа над видео разделом. Создание видеоплеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента
+
+					.title-1.mb-35 Добавить новое место
+
+					.add-job-block
+
+						+input('firstname','text', 'Введите даты начала и окончания работы','Период')
+
+						+input('firstname','text', 'Введите название должности','Название должности')
+
+						+textArea('message', 'type', 'Напишите интересное краткое содержательное описание','Описание работы, должностные обязанности, достигнутые результаты')
+
+						+button-save('Добавить', '#')

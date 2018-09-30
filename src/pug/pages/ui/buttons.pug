@@ -1,0 +1,87 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Кнопки - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container.container--left
+			.title Кнопки
+
+			h2 Кнопки с иконками
+			.section-ui
+				+button-icon-right('Вперёд', '#', 'fas fa-arrow-right')
+				+button-icon-left('Назад', '#', 'fas fa-arrow-left')
+			pre.
+				+button-icon-right('Вперёд', '#', 'fas fa-arrow-right')
+				+button-icon-left('Назад', '#', 'fas fa-arrow-left')
+			
+			h2 Большие кнопки
+			.section-ui
+				+button('Подробнее', '#')
+				+button-edit('Редактировать', '#')
+				+button-remove('Удалить', '#')
+				+button-save('Сохранить', '#')
+				+button-enter('Войти', '#')
+			pre.
+				+button('Подробнее', '#')
+				+button-edit('Редактировать', '#')
+				+button-remove('Удалить', '#')
+				+button-save('Сохранить', '#')
+				+button-enter('Войти', '#')
+
+			h2 Кнопки малого размера.
+			.section-ui
+				+button-profile('Профиль', '#')
+				+button-small('Подробнее', '#')
+				+button-editsmall('Редактировать', '#')
+				+button-savesmall('Сохранить', '#')
+				+button-removesmall('Удалить', '#')
+			pre.
+				+button-profile('Профиль', '#')
+				+button-small('Подробнее', '#')
+				+button-editsmall('Редактировать', '#')
+				+button-savesmall('Сохранить', '#')
+				+button-removesmall('Удалить', '#')
+
+			h2 Пример позиционирования кнопок
+			.section-ui
+				+button-edit('Редактировать', '#')(class='ml-20')
+
+			pre.
+				+button-edit('Редактировать', '#')(class='ml-20')
+
+			.section-ui
+				+button-remove('Удалить', '#')(class='ml-0')
+
+			pre.
+				+button-remove('Удалить', '#')(class='ml-0')
+
+			h2.mb-20 Универcальный миксин
+			+button('Обычная', '#')
+			pre.
+				+button('Обычная', '#')
+
+			+button('Малого размера', '#', 'small')
+			pre.
+				+button('Малого размера', '#', 'small')
+
+			+button('Редактировать', '#', 'edit')
+			+button('Удалить', '#', 'remove')
+			+button('Сохранить', '#', 'save')
+			+button('Войти', '#', 'enter')
+			pre.
+				+button('Редактировать', '#', 'edit')
+				+button('Удалить', '#', 'remove')
+				+button('Сохранить', '#', 'save')
+				+button('Войти', '#', 'enter')
+			
+			+button('Сохранить + малого размера', '#', 'save', 'small')
+			pre.
+				+button('Сохранить + малого размера', '#', 'save', 'small')
+				
+
+

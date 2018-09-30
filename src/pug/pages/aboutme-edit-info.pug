@@ -1,0 +1,31 @@
+extends ../layouts/main.pug
+
+block variables
+	- var title = 'Редактировать - Обо Мне';
+	- var pageClass = 'content-page';
+
+block content
+	//- контейнер с классом section-page (_base.less) добавлен для стандартных отступов,
+	//- которые присутствуют практически на всех макетах
+	//- при отличие отступов необходимо добавлять класс модификатор section-page--mypage
+	.container.user-content.section-page
+		.row
+			.col-md-10.offset-md-1
+
+				h1 Редактировать - Обо Мне
+
+				+input('firstname','text', 'Введите имя','Имя, фамилия')
+
+				p.label.mb-0.
+					Фотографии
+				p.mt-0.
+					Изображение jpg или png, рекомендуемый размер 205px на 205px, вес до 2Мб.
+				+inputFileUpload('Выбрать файл', 'Файл не выбран')
+
+				.mt-20
+					+avatar-small('photo-big.jpg')
+
+				+textArea('message', 'type', 'Введите информацию о себе...',' Информация на главной')
+
+				+button-save('Сохранить', '#').mr-20
+				+button('Отмена', '#')

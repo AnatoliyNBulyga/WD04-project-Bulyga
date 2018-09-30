@@ -1,0 +1,138 @@
+extends ../../layouts/ui-layout.pug
+
+block variables
+	- var title = 'Шапка общая - UI-kit и HTML фреймворк - Документация';
+	- var pageClass = 'body--dashboard';
+
+block content
+	include ../../sections/ui-nav-inside-ui.pug
+
+	.main-wrapper
+		.container-fluid.container--left
+			.title Шапка общая
+			
+				p Шапка-гость 
+			header.header
+				.header-container
+					.header-top
+						+logo('Digital Lifestyle','Сайт IT специалиста')
+						div.header-registration
+							+link('Регистрация', '#').header-registration__link
+							+link('Вход', '#').header-registration__link
+					nav.header-nav
+						ul
+							+linkNav('Главная', '#')
+							+linkNav('Обо мне', '#')
+							+linkNav('Работы', '#')
+							+linkNav('Блог', '#').header-nav__active
+							+linkNav('Контакты', '#')
+							
+			.section-ui.mt-20
+				.title-medium Подключение из файлa
+				pre include ../../sections/header.pug
+				p
+					| 	Шапка-гость
+				pre.
+					header.header
+						.header-container
+							.header-top
+								+logo('Digital Lifestyle','Сайт IT специалиста')
+								div.header-registration
+									+link('Регистрация', '#').header-registration__link
+									+link('Вход', '#').header-registration__link
+							nav.header-nav
+								ul
+									+linkNav('Главная', '#')
+									+linkNav('Обо мне', '#')
+									+linkNav('Работы', '#')
+									+linkNav('Блог', '#').header-nav__active
+									+linkNav('Контакты', '#')
+
+
+				p Шапка-Администратора 
+				
+			header.header
+				.header-admin__container
+					.header-top
+						+logo('Digital Lifestyle','Сайт IT специалиста')
+					nav.header-nav
+						ul
+							+linkNav('Главная', '#')
+							+linkNav('Обо мне', '#')
+							+linkNav('Работы', '#')
+							+linkNav('Блог', '#')
+							+linkNav('Контакты','#')
+							
+			.section-ui.mt-20
+				title-medium Подключение из файла
+				pre include ../../sections/header.pug
+				p
+					|	Шапка-Администратора
+				pre.
+
+					header.header
+						.header-admin__container
+							.header-top
+								+logo('Digital Lifestyle','Сайт IT специалиста')
+							nav.header-nav
+								ul
+									+linkNav('Главная', '#')
+									+linkNav('Обо мне', '#')
+									+linkNav('Работы', '#')
+									+linkNav('Блог', '#')
+									+linkNav('Контакты','#')
+
+
+				p.
+					Шапка-Пользователь 
+			header.header
+				.header-container
+					.header-top
+						+logo('Digital Lifestyle','Сайт IT специалиста')
+						div.header-right__col
+							+avatar-small('photo-big.jpg')
+							div.header-user
+								p.header-user__name
+									|	Юрий Ключевский
+								span
+									|	пользователь
+								div.header-user__but
+									+button-profile('Профиль', '#')
+									+button-profile('Выход', '#')
+					nav.header-nav
+						ul
+							+linkNav('Главная', '#')
+							+linkNav('Обо мне', '#')
+							+linkNav('Работы', '#')
+							+linkNav('Блог', '#').header-nav__active
+							+linkNav('Контакты', '#')
+					
+					//	include ../../sections/header.pug
+
+		.section-ui.mt-20
+			.title-medium Подключение из файла
+			pre include ../../sections/header.pug
+			p.
+				Шапка-Пользователь 
+			pre.
+				header.header
+					.header-container
+						.header-top
+							+logo('Digital Lifestyle','Сайт IT специалиста')
+							div.header-right__col
+								+avatar-small('photo-big.jpg')
+								div.header-user
+									p.header-user__name
+										|	Юрий Ключевский
+									span
+										|	пользователь
+									div.header-user__but
+										+button-profile('Профиль', '#')
+										+button-profile('Выход', '#')
+						nav.header-nav
+							ul
+								+linkNav('Главная', '#')
+								+linkNav('Обо мне', '#')
+								+linkNav('Работы', '#')
+								+linkNav('Блог', '#').header-nav__active
+								+linkNav('Контакты', '#')

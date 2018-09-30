@@ -1,0 +1,78 @@
+.comment-register {
+	background-color: @register-comment-bg;
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	p {
+		font-size: 20px;
+		letter-spacing: 0.4px;
+		line-height: 34px;
+		color: @text;
+		margin: 0;
+		text-align: center;
+	}
+}
+
+// for comment-add.html
+.comment-add-block {
+	padding: 21px 17px;
+	width: 100%;
+	display: flex;
+	background-color: @register-comment-bg;
+	align-items: flex-start;
+	border-radius: 6px;
+	&__left {
+		margin-right: 20px;
+	}
+	&__right {
+		width: 100%;
+	}
+}
+
+
+/*********блок 2 комментария* *********/
+
+.comments-title {
+	font-size: 26px;
+	font-weight: 600;
+}
+
+.comments-item {
+	padding-top: 19px;
+	padding-bottom: 21px;
+	padding-left: 19px;
+	padding-right: 19px;
+	background-color: @background-color;
+	display: flex;
+	align-items: center;
+	border-radius: 6px;
+	margin-bottom: 12px;
+}
+
+.avatar-block {
+	margin-right: 19px;
+}
+
+.comment-item__top {
+	display: flex;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.user-name {
+	margin-right: 20px;
+	color: @text;
+	font-weight: 700;
+}
+
+.user-name-href{
+	margin-right: 20px;
+	color: @active;
+	text-decoration: none;
+}
+
+.comment-item__date span {
+	margin-right: 10px;
+	color: @upload-button;
+}
