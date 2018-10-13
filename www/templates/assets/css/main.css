@@ -449,10 +449,11 @@ a.badge:active {
   font-size: 22px;
   line-height: 28px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 .card--post {
   width: 100%;
-  height: 308px;
+  min-height: 320px
 }
 .card--portfolio {
   padding: 0;
@@ -1540,15 +1541,12 @@ ul.admin-nav--right a.admin-nav__link {
   border-bottom: 1px solid rgba(205, 222, 232, 0);
 }
 .header-nav__active {
-  border-bottom: 1px solid transparent;
-  -webkit-transition: border-bottom 0.4s;
-  -o-transition: border-bottom 0.4s;
-  transition: border-bottom 0.4s;
+  border-bottom: none;
 }
 .header-nav__active:hover,
 .header-nav__active:active,
 .header-nav__active:focus {
-  border-bottom: 1px solid #cddee8;
+  border-bottom: none;
 }
 .header-user {
   display: -webkit-box;

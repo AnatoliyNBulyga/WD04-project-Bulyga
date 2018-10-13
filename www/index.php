@@ -57,19 +57,41 @@ switch ( $uri[0] ) {
 
 	case 'profile-edit':
 		include ROOT . "modules/profile/profile-edit.php";
-		break;								
+		break;	
+
+// :::::::::::::::::::::ABOUT::::::::::::::::::::::::::::::::::								
 
 	case 'about':
 		include "modules/about/about.php";
 		break;
 
+// :::::::::::::::::::::CONTACTS::::::::::::::::::::::::::::::::::	
+
 	case 'contacts':
 		include "modules/contacts/contacts.php";
 		break;
 
+// :::::::::::::::::::::BLOG::::::::::::::::::::::::::::::::::	
+
 	case 'blog':
-		include "modules/blog/blog.php";
+		include "modules/blog/index.php";
 		break;
+
+	case 'blog/post-new':
+		include "modules/blog/post-new.php";
+		break;
+
+	case 'blog/post':
+		include "modules/blog/post.php";
+		break;	
+
+// :::::::::::::::::::::PORTPHOLIO::::::::::::::::::::::::::::::::::	
+
+	case 'portfolio':
+		include "modules/portfolio/portfolio.php";
+		break;
+
+// :::::::::::::::::::::404::::::::::::::::::::::::::::::::::	
 
 	default:
 		include "modules/main/index.php";
