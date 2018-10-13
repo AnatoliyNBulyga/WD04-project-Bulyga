@@ -6,6 +6,10 @@ define('DB_NAME', 'WD04-project-Bulyga');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 
+//	SITE SETTINGS FOR EMAILS
+define('SITE_NAME', 'Сайт портфолио - Анатолия Булыги');
+define('SITE_EMAIL', 'anatoliynbulyga@gmail.com');
+define('ADMIN_EMAIL', 'info@portal4web.com');
 /**
 * Устанавливаем  путь  до корневой директории  скрипта
 * по протоколу  HTTP
