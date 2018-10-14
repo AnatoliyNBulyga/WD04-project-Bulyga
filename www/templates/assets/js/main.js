@@ -26,4 +26,16 @@ $(document).ready(function() {
 
     });
 
+    setTimeout(function() {
+
+       $("[data-notify-hide]").fadeOut(400); 
+        
+    }, 1500);
+
+    $("[data-notify-hide]").dblclick(function() {
+        $(this).fadeOut(400);
+    });
+
+    
+
 });

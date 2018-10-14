@@ -17,7 +17,8 @@
 		</div>
 	</div>
 	<ul class="admin-nav section-ui">
-		<li class="admin-nav-item"><a class="admin-nav__link" href="http://yandex.ru"><i class="fas fa-plus-circle"></i><span class="ml-10">Пост</span></a></li>
+		<li class="admin-nav-item"><a class="admin-nav__link" href="<?=HOST?>blog/post-new"><i class="fas fa-plus-circle"></i><span class="ml-10">Пост</span></a></li>
+		<li class="admin-nav-item"><a class="admin-nav__link" href="<?=HOST?>blog/categories"><i class="fas fa-folder"></i><span class="ml-10">Категории</span></a></li>
 		<li class="admin-nav-item"><a class="admin-nav__link" href="#"><i class="fas fa-plus-circle"></i><span class="ml-10">Работа</span></a></li>
 		<li class="admin-nav-item"><a class="admin-nav__link" href="#"><i class="fas fa-edit"></i><span class="ml-10">Обо мне</span></a></li>
 		<li class="admin-nav-item"><a class="admin-nav__link" href="#"><i class="fas fa-edit"></i><span class="ml-10">Контакты</span></a></li>
