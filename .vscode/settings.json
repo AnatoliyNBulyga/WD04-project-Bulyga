@@ -1,0 +1,9 @@
+{
+    "files.autoSave": "onWindowChange",
+    "editor.fontSize": 22,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'Operator Mono Book', Consolas, 'Courier New', monospace",
+    "php.validate.run": "onType",
+    "editor.tabSize": 2
+}

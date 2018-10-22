@@ -1,0 +1,16 @@
+.sticky-footer {
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;  
+}
+
+body::before {
+  display: none;
+}
+
+html, body {
+  height: 100%;
+}

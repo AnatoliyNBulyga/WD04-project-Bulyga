@@ -1,5 +1,7 @@
 <form action="<?=HOST?>registration" method="POST" id="login-form" class="login-form" novalidate>
 
+	<h1 class="text-center login-form__header">Регистрация</h1>
+
 	<?php require ROOT . "templates/_parts/_errors.tpl"; ?>
 
 	<div class="notify notify--error notify--enter-email mb-20 error-hide">Введите email</div>

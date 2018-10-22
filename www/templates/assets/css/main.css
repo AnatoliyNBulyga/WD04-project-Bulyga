@@ -356,7 +356,7 @@ a.badge:active {
   background-color: rgba(34, 34, 34, 0.6);
 }
 .button--small {
-  padding-bottom: 0.8em;
+  padding-bottom: 0.5em;
   padding-top: 0.45em;
   font-size: 14px;
 }
@@ -580,6 +580,9 @@ a.badge:active {
 .label {
   font-weight: 700;
 }
+.label--ckEditor {
+  line-height: 40px;
+}
 .input {
   height: 42px;
   width: 100%;
@@ -733,7 +736,7 @@ a.badge:active {
 .formInput-image__delete-button {
   position: absolute;
   bottom: 10px;
-  left: 150px;
+  right: 10px;
 }
 /* Левая панель в документации */
 .left-panel {
@@ -2006,6 +2009,9 @@ h3.main-page__aboutme {
 .blog-edit__fileUp .inputfile + label {
   padding: 11px 10px 14px ;
   width: 135px;
+}
+.blog-edit__fileUp {
+  margin-bottom: 20px;
 }
 .team-portfolio .title-1 {
   margin: 0;

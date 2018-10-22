@@ -1,12 +1,3 @@
-
-<!-- <?php 
-	
-echo"<pre>";
-print_r($_POST);
-echo"</pre>";
-
-?> -->
-
 <div class="content">
 	<div class="container user-content section-page">
 		<div class="row">
@@ -16,12 +7,40 @@ echo"</pre>";
 				<?php require ROOT . "templates/_parts/_errors.tpl"; ?>
 
 				<form action="<?=HOST?>blog/post-new" method="POST" enctype="multipart/form-data">
-					<div class="form-group"><label class="label">Название<input class="input" name="postTitle" type="text" placeholder="Введите название поста" /></label></div>
-					<div class="blog-edit__container"><b>Изображение</b>
+
+					<div class="form-group">
+						<label class="label">Название
+							<input class="input" name="postTitle" type="text" placeholder="Введите название поста" />
+						</label>
+					</div>
+
+					<div class="form-group">
+						<label class="label">
+							<b>Категория</b>
+							<select name="postCat">
+								<?php foreach ($cats as $cat): ?>
+
+									<option value="<?=$cat['id']?>"><?=$cat['cat_title']?></option>
+									
+								<?php endforeach ?>
+							</select>
+						</label>
+					</div>
+
+					
+
+					<div class="blog-edit__container">
+						<b>Изображение</b>
 						<p class="mb-10"> Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.</p>
 					</div>
-					<div class="blog-edit__fileUp"><input class="inputfile" type="file" name="postImg" id="file" /><label class="label-input-file" for="file">Изображение</label><span>Файл не выбран</span></div>
-					<div class="form-group"><label class="label">Содержание поста<textarea class="textarea" name="postText" type="type" placeholder="Введите содеражание поста"></textarea></label></div>
+					<div class="blog-edit__fileUp">
+						<input class="inputfile" type="file" name="postImg" id="file" /><label class="label-input-file" for="file">Изображение</label><span>Файл не выбран</span></div>
+					<div class="form-group">
+						<label class="label">Содержание поста
+							<textarea id="ckEditor" class="textarea" name="postText" type="type" placeholder="Введите содеражание поста"></textarea>
+							<?php include_once ROOT . 'templates/_parts/_ckEditorConnect.tpl'; ?>
+						</label>
+					</div>
 					<input type="submit" name="postNew" class="button button--save mr-20" value="Сохранить">
 					<a class="button" href="<?=HOST?>blog">Отмена</a>
 				</form>

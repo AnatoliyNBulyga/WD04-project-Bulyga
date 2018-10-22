@@ -36,6 +36,4 @@ $(document).ready(function() {
         $(this).fadeOut(400);
     });
 
-    
-
 });

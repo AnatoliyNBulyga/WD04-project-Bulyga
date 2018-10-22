@@ -2,7 +2,7 @@
 	<div class="login-header">
 		<div class="logo">
 			<div class="logo-icon"><i class="far fa-paper-plane"></i></div>
-			<div class="logo_description"><a class="header-logo__title" href="#">Супер сайт</a><a class="header-logo__sub" href="#"></a>
+			<div class="logo_description"><a class="header-logo__title" href="<?=HOST?>">Супер сайт</a><a class="header-logo__sub" href="#"></a>
 			</div>
 		</div>
 		
