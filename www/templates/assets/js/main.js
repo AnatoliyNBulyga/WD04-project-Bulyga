@@ -36,4 +36,22 @@ $(document).ready(function() {
         $(this).fadeOut(400);
     });
 
+    // Delete img
+    $('#button--remove').on('click', function() {
+
+        $('.delete-description').toggleClass('hidden');
+    });
+
+    // Плавная прокрутка
+    $("a[href='#comments']").click(function() {
+          $("html, body").animate({
+             scrollTop: $($(this).attr("href")).offset().top + "px"
+          }, {
+             duration: 400,
+             easing: "swing"
+          });
+          return false;
+       })
+
+
 });

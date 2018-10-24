@@ -28,6 +28,14 @@ if ( isset($_POST['postUpdate'])) {
 		$post->authorId = $_SESSION['logged_user']['id'];
 		$post->updateTime=R::isoDateTime();
 
+		if ( isset($_POST['deleteImg']) && $_POST['deleteImg'] == 'yes' ) {
+
+			unlink( ROOT . 'usercontent/blog/' . $post->postImg );
+			unlink( ROOT . 'usercontent/blog/' . $post->postImgSmall );
+			$post->postImg = '';
+			$post->postImgSmall = '';
+		}
+
 		if ( isset($_FILES['postImg']['name']) && $_FILES['postImg']['tmp_name'] != "" ) {
 			
 			// Write file image params in variables

@@ -14,3 +14,21 @@ body::before {
 html, body {
   height: 100%;
 }
+
+.deleteImg {
+	display: inline-block;
+	vertical-align: middle;
+}
+.formInput-image--img img {
+	display: block;
+	margin-top: 10px;
+}
+
+.avatar {
+  background-image: url(../img/avatars/images.jpg);
+  -webkit-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  
+}

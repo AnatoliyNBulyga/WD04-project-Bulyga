@@ -11,6 +11,6 @@
 			<?=$_SESSION['logged_user']['firstname']?>
 			<?=$_SESSION['logged_user']['secondname']?>
 		</p><span> пользователь</span>
-		<div class="header-user__but"><a class="button button--profile" href="#">Профиль</a><a class="button button--profile" href="<?=HOST?>logout">Выход</a></div>
+		<div class="header-user__but"><a class="button button--profile" href="<?=HOST?>profile">Профиль</a><a class="button button--profile" href="<?=HOST?>logout">Выход</a></div>
 	</div>
 </div>

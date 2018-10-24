@@ -58,13 +58,16 @@
 					</div>
 
 					<?php if ( $post['post_img_small'] != "" ): ?>
-					<div class="formInput-image">
-						<img src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>" />
+					<div class="formInput-image formInput-image--img">
+						<input type="checkbox" id="deleteImg" class="deleteImg" name="deleteImg" value="yes">
+						<span class="delete-description hidden">Изображение будет удалено</span>
+						<img  src="<?=HOST?>usercontent/blog/<?=$post['post_img_small']?>" alt="<?=$post['title']?>" />
 
 						<div class="formInput-image__delete-button">
-							<a class="button button--small button--remove" href="#">Удалить</a>
+							<label class="button button--small button--remove" id="button--remove" for="deleteImg">Удалить</label>
 						</div>
 					</div>
+					
 					<?php endif ?>
 
 					<div class="form-group">
