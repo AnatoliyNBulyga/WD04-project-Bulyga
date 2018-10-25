@@ -65,12 +65,6 @@ switch ( $uri[0] ) {
 		include "modules/about/about.php";
 		break;
 
-// :::::::::::::::::::::CONTACTS::::::::::::::::::::::::::::::::::	
-
-	case 'contacts':
-		include "modules/contacts/contacts.php";
-		break;
-
 // :::::::::::::::::::::CATEGORIES::::::::::::::::::::::::::::::::::	
 
 	case 'blog/categories':
@@ -109,7 +103,22 @@ switch ( $uri[0] ) {
 
 	case 'blog/post-delete':
 		include "modules/blog/post-delete.php";
+		break;
+
+
+// :::::::::::::::::::::CONTACTS:::::::::::::::::::::::::::::::::	
+
+	case 'contacts':
+		include "modules/contacts/index.php";
+		break;
+
+	case 'contacts-edit':
+		include "modules/contacts/contacts-edit.php";
 		break;	
+
+	case 'messages':
+		include "modules/contacts/messages.php";
+		break;		
 
 // :::::::::::::::::::::PORTPHOLIO::::::::::::::::::::::::::::::::::	
 

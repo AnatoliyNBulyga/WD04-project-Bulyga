@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 24 2018 г., 22:39
+-- Время создания: Окт 25 2018 г., 23:38
 -- Версия сервера: 5.5.45-log
 -- Версия PHP: 5.5.28
 
@@ -90,6 +90,34 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 (5, 23, 19, 'Еще один комментарий', '2018-10-24 22:23:05'),
 (6, 23, 19, 'Еще один комментарий', '2018-10-24 22:25:58'),
 (7, 23, 19, 'Еще один комментарий', '2018-10-24 22:26:05');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `contacts`
+--
+
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(191) DEFAULT NULL,
+  `phone` varchar(191) DEFAULT NULL,
+  `adress` varchar(191) DEFAULT NULL,
+  `name` varchar(191) DEFAULT NULL,
+  `secondname` varchar(191) DEFAULT NULL,
+  `skype` varchar(191) DEFAULT NULL,
+  `vk` varchar(191) DEFAULT NULL,
+  `facebook` varchar(191) DEFAULT NULL,
+  `github` varchar(191) DEFAULT NULL,
+  `twitter` varchar(191) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, `skype`, `vk`, `facebook`, `github`, `twitter`) VALUES
+(1, '1213t@test.com', '0000', 'adress', '212121', '', 'anatoliybulyga', 'vk', 'fb', 'github', 'twitter');
 
 -- --------------------------------------------------------
 
