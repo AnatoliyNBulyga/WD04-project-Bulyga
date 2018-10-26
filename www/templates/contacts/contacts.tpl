@@ -1,23 +1,74 @@
+
+<?php function showContactItem($name) {
+	global $contacts;
+	if ( $contacts[$name] != "") { ?>
+
+		<a href="<?php if ( $name == 'email') { echo "mailto:";
+				} else if ( $name == 'skype') { echo "skype:<?=$contacts[$name]?>?chat";
+				} else if ($name == 'phone') { echo "tel:"; } ?>
+				<?=$contacts[$name]?> " target="_blank">
+
+				<?php if ( $name == 'vk') { 
+					echo "Профиль Вконтакте"; 
+				} else if ( $name == 'facebook') { 
+					echo "Профиль Facebook";
+				} else if ($name == 'github') {
+					echo "Профиль Github";
+				} else {
+					echo $contacts[$name];
+				} ?>
+				
+		</a>
+		
+	<?php } ?>	
+<?php } ?>
+
 <div class="content">
 	<div class="container user-content section-page">
-		<div class="row justify-content-end"><a class="button button--edit mr-20" href="<?=HOST?>contacts-edit">Редактировать</a><a class="button" href="<?=HOST?>messages">Сообщения</a></div>
+
+	<?php if ( isAdmin() ) {  ?>
+		<div class="row justify-content-end">
+			<a class="button button--edit mr-20" href="<?=HOST?>contacts-edit">Редактировать</a>
+			<a class="button" href="<?=HOST?>messages">Сообщения</a>
+		</div>
+	<?php } ?>	
+
 		<div class="row">
 			<div class="col-md-5">
 				<div class="contacts__title title-1">Контакты</div>
 				<div class="row align-items-start mb-15">
 					<div class="col-md-5">
+						<h6 class="contacts__item-name">Имя:</h6>
+					</div>
+					<div class="col-md-7">
+						<div class="contacts__item-email">
+
+							<?=$contacts['name'] ?>
+							
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-start mb-15">
+					<div class="col-md-5">
+						<h6 class="contacts__item-name">Фамилия:</h6>
+					</div>
+					<div class="col-md-7">
+						<div class="contacts__item-email">
+
+							<?=$contacts['secondname'] ?>
+							
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-start mb-15">
+					<div class="col-md-5">
 						<h6 class="contacts__item-name">Email</h6>
 					</div>
 					<div class="col-md-7">
-						<?php if ( @$contacts['skype'] != "") { ?>
-							
-							
-
-						<?php	} ?>
 						<div class="contacts__item-email">
-							<a href="<?=$contcts['email']?>">
-								<?=$contacts['email']?>
-							</a>
+
+							<?php showContactItem('email'); ?>
+							
 						</div>
 					</div>
 				</div>
@@ -30,13 +81,40 @@
 						<?php if ( @$contacts['skype'] != "") { ?>
 							
 							<div class="contacts__item-skype">
-								<a href="<?=$contacts['skype']?>"><?=$contacts['skype']?></a>
+								<?php showContactItem('skype'); ?>
 							</div>
 
 						<?php	} ?>
 
 					</div>
 				</div>
+				
+				<div class="row align-items-start mb-15">
+					<div class="col-md-5">
+						<h6 class="contacts__item-name">Телефон</h6>
+					</div>
+					<div class="col-md-7">
+							
+							<div class="contacts__item-phone">
+								<?php showContactItem('phone'); ?>
+							</div>
+
+					</div>
+				</div>
+				<div class="row align-items-start mb-30">
+					<div class="col-md-5">
+						<h6 class="contacts__item-name">Адрес</h6>
+					</div>
+					<div class="col-md-7">
+							
+							<div class="contacts__item-address">
+								<?php showContactItem('skype'); ?>		
+							</div>
+
+					</div>
+				</div>
+
+				<?php if ( @$contacts['vk'] != "" && @$contacts['facebook'] != "" && @$contacts['twitter'] != "" ) : ?>
 				<div class="row align-items-start mb-15">
 					<div class="col-md-5">
 						<h6 class="contacts__item-name">Социальные сети</h6>
@@ -44,51 +122,32 @@
 					<div class="col-md-7">
 						<div class="contacts__item-social">
 						
-						<?php if ( @$contacts['fb'] != "") { ?>
+						<?php if (@$contacts['vk'] != "") { ?>
 
-							<a href="<?=$contacts['vk']?>">VK</a>
+							<?php showContactItem('vk'); ?>
 
 						<?php	} ?>
 
+						<?php if (@$contacts['facebook'] != "") { ?>
 						
-						<?php if ( @$contacts['fb'] != "") { ?>
 							
-							<a href="<?=$contacts['facebook']?>">Facebook</a>
+							<?php showContactItem('facebook'); ?>
 
 						<?php	} ?>
+
+						<?php if (@$contacts['github'] != "") { ?>
+						
+							
+							<?php showContactItem('github'); ?>
+
+						<?php	} ?>
+						
 
 
 						</div>
 					</div>
 				</div>
-				<div class="row align-items-start mb-15">
-					<div class="col-md-5">
-						<h6 class="contacts__item-name">Телефон</h6>
-					</div>
-					<div class="col-md-7">
-
-						<?php if ( @$contacts['fb'] != "") { ?>
-							
-							<div class="contacts__item-phone"><?=$contacts['phone']?></div>
-
-						<?php	} ?>
-
-					</div>
-				</div>
-				<div class="row align-items-start">
-					<div class="col-md-5">
-						<h6 class="contacts__item-name">Адрес</h6>
-					</div>
-					<div class="col-md-7">
-
-						<?php if ( @$contacts['fb'] != "") { ?>
-							
-							<div class="contacts__item-address"><?=$contacts['adress']?></div>
-							
-						<?php	} ?>
-
-					</div>
-				</div>
+				<?php endif ?>
 			</div>
 			<div class="offset-md-1 col-md-4">
 				<div class="contacts__title title-1">Связаться со мной</div>

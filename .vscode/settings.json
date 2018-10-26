@@ -1,15 +1,20 @@
 {
-    "files.autoSave": "onWindowChange",
-    "editor.fontSize": 22,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.wordWrap": "on",
+    "editor.fontSize": 23,
+    "markdown.preview.fontSize": 18,
+    "editor.lineHeight": 38,
+    "terminal.integrated.lineHeight": 25,
     "editor.fontFamily": "'Operator Mono', Consolas, 'Courier New', monospace",
-    "php.validate.run": "onType",
-    "editor.tabSize": 2,
-    "editor.fontWeight": "100",
-    "editor.lineHeight": 32,
+    "editor.formatOnPaste": true,
+    "editor.wordWrap": "on",
+    "editor.fontWeight": "300",
     "php.validate.executablePath": "D:/programs/OSPanel/modules/php/PHP-7.0-x64/php.exe",
     "php.executablePath": "D:/programs/OSPanel/modules/php/PHP-7.0-x64/php.exe",
-    "terminal.integrated.fontSize": 18,
-    "terminal.integrated.fontWeight": "100"
+    "vs-kubernetes": {
+        "vs-kubernetes.kubectl-path": "C:\\Users\\user\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
+        "vs-kubernetes.helm-path": "C:\\Users\\user\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vs-kubernetes.draft-path": "C:\\Users\\user\\.vs-kubernetes\\tools\\draft\\windows-amd64\\draft.exe",
+        "vs-kubernetes.minikube-path": "C:\\Users\\user\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+    },
+    "workbench.colorTheme": "One Dark (Sublime)",
+    "editor.suggestFontSize": 18
 }

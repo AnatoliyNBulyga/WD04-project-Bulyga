@@ -1,25 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.0.10.10
+-- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 26 2018 г., 16:45
--- Версия сервера: 5.6.41
--- Версия PHP: 5.5.38
+-- Время создания: Окт 27 2018 г., 00:34
+-- Версия сервера: 5.5.45-log
+-- Версия PHP: 5.5.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `wd04-project-bulyga`
+-- База данных: `WD04-project-Bulyga`
 --
 
 -- --------------------------------------------------------
@@ -28,11 +26,12 @@ SET time_zone = "+00:00";
 -- Структура таблицы `about`
 --
 
-CREATE TABLE `about` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `about` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `description` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `about`
@@ -47,10 +46,11 @@ INSERT INTO `about` (`id`, `name`, `description`) VALUES
 -- Структура таблицы `categories`
 --
 
-CREATE TABLE `categories` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `cat_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `cat_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `categories`
@@ -67,13 +67,16 @@ INSERT INTO `categories` (`id`, `cat_title`) VALUES
 -- Структура таблицы `comments`
 --
 
-CREATE TABLE `comments` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `post_id` int(11) UNSIGNED DEFAULT NULL,
-  `user_id` int(11) UNSIGNED DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) unsigned DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
   `text` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `date_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `date_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_foreignkey_comments_post` (`post_id`),
+  KEY `index_foreignkey_comments_user` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `comments`
@@ -94,8 +97,8 @@ INSERT INTO `comments` (`id`, `post_id`, `user_id`, `text`, `date_time`) VALUES
 -- Структура таблицы `contacts`
 --
 
-CREATE TABLE `contacts` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(191) DEFAULT NULL,
   `phone` varchar(191) DEFAULT NULL,
   `adress` varchar(191) DEFAULT NULL,
@@ -105,15 +108,16 @@ CREATE TABLE `contacts` (
   `vk` varchar(191) DEFAULT NULL,
   `facebook` varchar(191) DEFAULT NULL,
   `github` varchar(191) DEFAULT NULL,
-  `twitter` varchar(191) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `twitter` varchar(191) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Дамп данных таблицы `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, `skype`, `vk`, `facebook`, `github`, `twitter`) VALUES
-(1, 'anatoliynbulyga@gmail.com', '0000', 'adress', 'Анатолий', 'Булыга', 'anatoliybulyga', 'https://vk.com/id30084761', 'https://www.facebook.com/profile.php?id=100015295591350', 'https://github.com/AnatoliyNBulyga', 'twitter');
+(1, 'anatoliynbulyga@gmail.com', '+3 8 098 590 65 45', 'adress', 'Анатолий', 'Булыга', 'anatoliybulyga', 'https://vk.com/id30084761', 'https://www.facebook.com/profile.php?id=100015295591350', 'https://github.com/AnatoliyNBulyga', 'twitter');
 
 -- --------------------------------------------------------
 
@@ -121,17 +125,19 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, 
 -- Структура таблицы `posts`
 --
 
-CREATE TABLE `posts` (
-  `id` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8mb4_unicode_ci,
-  `author_id` int(11) UNSIGNED DEFAULT NULL,
+  `author_id` int(11) unsigned DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
   `post_img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `post_img_small` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cat` int(11) UNSIGNED DEFAULT NULL,
-  `update_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `cat` int(11) unsigned DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_foreignkey_posts_author` (`author_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- Дамп данных таблицы `posts`
@@ -153,8 +159,8 @@ INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`
 -- Структура таблицы `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -165,8 +171,9 @@ CREATE TABLE `users` (
   `avatar` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `avatar_small` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `recovery_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `recovery_code_times` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `recovery_code_times` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=20 ;
 
 --
 -- Дамп данных таблицы `users`
@@ -178,90 +185,6 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`, `firstname`, `secondname
 (17, 'info@admin.co', '$2y$10$S5hf8Xu1JlNHhAvqjXUuMeC1DOausyjhk9xK7IrdEWrPqdZowrQY.', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (18, 'info2@admin.com', '$2y$10$mzeD5x4DhBOs8TlA4W8je.WcBuiyxv2cDPdkrr0oI.LFyfviAt3c2', 'user', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (19, 'neadmin@admin.com', '$2y$10$ZxlLQA6KSUOspBcWJB1EXuGCyEHXMCZmurw0BHH3ihjlnfdVRsg8O', 'user', 'Иван', 'Крузенштерн', 'Санкт-Петербург', 'Россия', '54670410.jpg', '48-54670410.jpg', NULL, NULL);
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `about`
---
-ALTER TABLE `about`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `index_foreignkey_comments_post` (`post_id`),
-  ADD KEY `index_foreignkey_comments_user` (`user_id`);
-
---
--- Индексы таблицы `contacts`
---
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `index_foreignkey_posts_author` (`author_id`);
-
---
--- Индексы таблицы `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `about`
---
-ALTER TABLE `about`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT для таблицы `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT для таблицы `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT для таблицы `contacts`
---
-ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT для таблицы `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT для таблицы `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
