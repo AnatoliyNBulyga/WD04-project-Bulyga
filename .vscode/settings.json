@@ -3,7 +3,13 @@
     "editor.fontSize": 22,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.wordWrap": "on",
-    "editor.fontFamily": "'Operator Mono Book', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Operator Mono', Consolas, 'Courier New', monospace",
     "php.validate.run": "onType",
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.fontWeight": "100",
+    "editor.lineHeight": 32,
+    "php.validate.executablePath": "D:/programs/OSPanel/modules/php/PHP-7.0-x64/php.exe",
+    "php.executablePath": "D:/programs/OSPanel/modules/php/PHP-7.0-x64/php.exe",
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontWeight": "100"
 }

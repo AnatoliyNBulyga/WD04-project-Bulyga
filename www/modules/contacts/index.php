@@ -2,6 +2,8 @@
 
 $title = "Контакты";
 
+$contacts = R::load('contacts', 1);
+
 // $cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 // Готовим контент для центральной части
