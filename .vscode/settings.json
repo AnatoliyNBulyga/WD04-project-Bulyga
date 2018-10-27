@@ -7,8 +7,8 @@
     "editor.formatOnPaste": true,
     "editor.wordWrap": "on",
     "editor.fontWeight": "300",
-    "php.validate.executablePath": "D:/programs/OSPanel/modules/php/PHP-7.0-x64/php.exe",
-    "php.executablePath": "D:/programs/OSPanel/modules/php/PHP-7.0-x64/php.exe",
+    "php.validate.executablePath": "E:/OpenServer/modules/php/PHP-5.5/php.exe",
+    "php.executablePath": "E:/OpenServer/modules/php/PHP-5.5/php.exe",
     "vs-kubernetes": {
         "vs-kubernetes.kubectl-path": "C:\\Users\\user\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
         "vs-kubernetes.helm-path": "C:\\Users\\user\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",

@@ -151,15 +151,37 @@
 			</div>
 			<div class="offset-md-1 col-md-4">
 				<div class="contacts__title title-1">Связаться со мной</div>
+
+				<?php require ROOT . "templates/_parts/_errors.tpl"; ?>
+				<?php require ROOT . "templates/_parts/_success.tpl"; ?>
 				
-				<form class="form-contacts" action="">
-					<div class="form-group"><label class="label"><input class="input" name="firstname" type="text" placeholder="Введите имя" /></label></div>
-					<div class="form-group"><label class="label"><input class="input" name="firstname" type="text" placeholder="Email" /></label></div>
-					<div class="form-group"><label class="label"><textarea class="textarea" name="message" type="type" placeholder="Cообщение"></textarea></label></div>
+				<form class="form-contacts" action="<?=HOST?>contacts" method="POST" enctype="multipart/form-data">
+
+					<div class="form-group">
+						<label class="label">
+							<input class="input" name="name" type="text" placeholder="Введите имя" />
+						</label>
+					</div>
+					<div class="form-group">
+						<label class="label">
+							<input class="input" name="email" type="email" placeholder="Email" />
+						</label>
+					</div>
+					<div class="form-group">
+						<label class="label">
+							<textarea class="textarea" name="message" placeholder="Cообщение"></textarea>
+						</label>
+					</div>
+
 					<div class="form-contacts__file-upload">
 						<div class="file-upload__title title-6">Прикрепить файл</div>
-						<div class="file-upload__comment">div jpg, png, pdf, doc, весом до 2Мб.</div><input class="inputfile" type="file" name="file" id="file" /><label class="label-input-file" for="file">Выбрать файл</label><span>Файл не выбран</span><input class="button button--save" type="submit" value="Отправить" />
+						<div class="file-upload__comment">div jpg, png, pdf, doc, весом до 4Мб.</div>
+							<input class="inputfile" type="file" name="file" id="file" />
+							<label class="label-input-file" for="file">Выбрать файл</label>
+							<span>Файл не выбран</span>
+						<input class="button button--save" type="submit" name="newMessage" value="Отправить" />
 					</div>
+
 				</form>
 
 			</div>
