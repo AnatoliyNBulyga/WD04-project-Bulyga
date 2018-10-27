@@ -936,16 +936,6 @@ a.title,
   position: relative;
   margin-bottom: 0.9em;
 }
-.user-content li:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -20px;
-  top: 10px;
-  width: 6px;
-  height: 6px;
-  background-color: #037ec6;
-}
 .user-content > h1,
 .user-content > h2,
 .user-content > h3,

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 27 2018 г., 14:06
+-- Время создания: Окт 27 2018 г., 20:12
 -- Версия сервера: 5.5.45-log
 -- Версия PHP: 5.5.28
 
@@ -30,15 +30,16 @@ CREATE TABLE IF NOT EXISTS `about` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `photo` varchar(191) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `about`
 --
 
-INSERT INTO `about` (`id`, `name`, `description`) VALUES
-(1, 'Егор Казаков', 'Я - веб разработчик');
+INSERT INTO `about` (`id`, `name`, `description`, `photo`) VALUES
+(1, 'Aнатолий Булыга', '<p>Я - веб разработчик</p>\r\n', '482808055.jpg');
 
 -- --------------------------------------------------------
 
@@ -122,6 +123,27 @@ INSERT INTO `contacts` (`id`, `email`, `phone`, `adress`, `name`, `secondname`, 
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `jobs`
+--
+
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `period` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Дамп данных таблицы `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `period`, `title`, `description`) VALUES
+(4, 'ceнтябрь 2017 - по февраль 2018', 'верстальщик', 'Верстка psd - макетов');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `messages`
 --
 
@@ -134,14 +156,15 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `message_file` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `date_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=19 ;
 
 --
 -- Дамп данных таблицы `messages`
 --
 
 INSERT INTO `messages` (`id`, `email`, `name`, `message`, `message_file_name_original`, `message_file`, `date_time`) VALUES
-(17, 'test@test.com', 'Анатолий', 'Новое сообщение', '24.jpg', '62676696.jpg', '2018-10-27 14:02:15');
+(17, 'test@test.com', 'Анатолий', 'Новое сообщение', '24.jpg', '62676696.jpg', '2018-10-27 14:02:15'),
+(18, 'test@test.com', 'Анатолий', 'Новое сообщение', '24.jpg', '99093627.jpg', '2018-10-27 15:25:55');
 
 -- --------------------------------------------------------
 
@@ -175,6 +198,34 @@ INSERT INTO `posts` (`id`, `title`, `text`, `author_id`, `date_time`, `post_img`
 (23, 'Как я провел это лето', 'Прекрасно! Прекрасно!', 14, '2018-10-17 21:41:54', '93954772.jpg', '320-93954772.jpg', 7, '2018-10-19 22:46:19'),
 (27, 'Wi-Fi адаптер TP-LINK TL-WN822N', '<h1>Wi-Fi адаптер</h1>\r\n\r\n<p><strong>Адаптер</strong> был куплен на замену<em> китайскому свистку,</em> который в один прекрасный день окончательно достал своей глючностью и периодическими подвисаниями связи. К роутеру это безымянное чудо инженерной мысли из Поднебесной подключалось на скорости 54 Мбит/с, на деле тянуло не более мегабайта в секунду.</p>\r\n\r\n<p>Дума думалась недолго, спустя пару часов серфинга выбор пал на весь такой красивый беленький&nbsp;<strong>TP-LINK TL-WN822N</strong>.</p>\r\n', 14, '2018-10-22 21:34:21', '13831481.jpg', '320-13831481.jpg', 7, '2018-10-23 21:46:45'),
 (29, 'Как я провел эту осень', '<p>Прекрасно</p>\r\n', 14, '2018-10-22 23:13:28', '', '', 6, '2018-10-23 20:43:30');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `skills`
+--
+
+CREATE TABLE IF NOT EXISTS `skills` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `html` int(11) unsigned DEFAULT NULL,
+  `css` int(11) unsigned DEFAULT NULL,
+  `js` int(11) unsigned DEFAULT NULL,
+  `jquery` int(11) unsigned DEFAULT NULL,
+  `php` int(11) unsigned DEFAULT NULL,
+  `mysql` int(11) unsigned DEFAULT NULL,
+  `git` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gulp` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `npm` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `yarn` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `skills`
+--
+
+INSERT INTO `skills` (`id`, `html`, `css`, `js`, `jquery`, `php`, `mysql`, `git`, `gulp`, `npm`, `yarn`) VALUES
+(1, 50, 50, 50, 50, 50, 50, '80', '90', '100', '40');
 
 -- --------------------------------------------------------
 
