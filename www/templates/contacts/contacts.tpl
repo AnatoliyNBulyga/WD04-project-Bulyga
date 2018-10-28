@@ -189,3 +189,4 @@
 	</div>
 	<div class="map" id="map"></div>
 </div>
+<?php include_once ROOT . 'templates/_parts/_map.tpl'; ?>
