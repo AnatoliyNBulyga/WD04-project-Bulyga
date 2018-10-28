@@ -38,3 +38,12 @@ ul {
 .user-message {
   padding: 30px;
 }
+
+.my-portfolio__row .button.button--edit,
+.my-portfolio__row .button.button--back {
+  margin-left: 30px;
+}
+
+.my-portfolio__row .button {
+  max-height: 45px;
+}

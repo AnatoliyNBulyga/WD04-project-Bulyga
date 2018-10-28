@@ -143,8 +143,25 @@ switch ( $uri[0] ) {
 // :::::::::::::::::::::PORTPHOLIO::::::::::::::::::::::::::::::::::	
 
 	case 'portfolio':
-		include "modules/portfolio/portfolio.php";
+		include "modules/portfolio/index.php";
 		break;
+
+	case 'portfolio/project':
+		include "modules/portfolio/project.php";
+		break;	
+
+	case 'portfolio/project-new':
+		include "modules/portfolio/project-new.php";
+		break;
+
+
+	case 'portfolio/project-edit':
+		include "modules/portfolio/project-edit.php";
+		break;
+
+	case 'portfolio/project-delete':
+		include "modules/portfolio/project-delete.php";
+		break;	
 
 // :::::::::::::::::::::404::::::::::::::::::::::::::::::::::	
 

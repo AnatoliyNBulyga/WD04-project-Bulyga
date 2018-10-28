@@ -31,10 +31,13 @@
 
 					<div class="blog-edit__container">
 						<b>Изображение</b>
-						<p class="mb-10"> Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 2Мб.</p>
+						<p class="mb-10"> Изображение jpg или png, рекомендуемая ширина 945px и больше, высота от 400px и более, вес до 4Мб.</p>
 					</div>
 					<div class="blog-edit__fileUp">
-						<input class="inputfile" type="file" name="postImg" id="file" /><label class="label-input-file" for="file">Изображение</label><span>Файл не выбран</span></div>
+						<input class="inputfile" type="file" name="postImg" id="file" />
+
+						<label class="label-input-file" for="file">Изображение</label>
+						<span>Файл не выбран</span></div>
 					<div class="form-group">
 						<label class="label">Содержание поста
 							<textarea id="ckEditor" class="textarea" name="postText" type="type" placeholder="Введите содеражание поста"></textarea>

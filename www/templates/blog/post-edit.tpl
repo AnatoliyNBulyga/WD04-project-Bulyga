@@ -1,17 +1,4 @@
 
-<?php 
-
-// echo"<pre>";
-// 	print_r($post);
-// echo"</pre>";
-
-// echo"<pre>";
-// 	print_r($cats);
-// echo"</pre>";
-
-
- ?>
-
 <div class="content">
 	<div class="container user-content section-page">
 		<div class="row">

@@ -179,7 +179,7 @@
 							<input class="inputfile" type="file" name="file" id="file" />
 							<label class="label-input-file" for="file">Выбрать файл</label>
 							<span>Файл не выбран</span>
-						<input class="button button--save" type="submit" name="newMessage" value="Отправить" />
+							<input class="button button--save" type="submit" name="newMessage" value="Отправить" />
 					</div>
 
 				</form>

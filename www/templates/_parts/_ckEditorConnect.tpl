@@ -8,6 +8,10 @@
         customConfig: '<?=HOST?>templates/assets/js/ckEditorConfig.js'
     });
 
+    CKEDITOR.replace('ckEditor-2');
+    CKEDITOR.replace('ckEditor-3');
+
+
 	});
 
 </script>
