@@ -1,14 +1,14 @@
 <section class="my-portfolio">
    <div class="my-portfolio__gradient">
       <div class="my-portfolio__logo pt-55 mb-100 ml-50">
-         <div class="logo">
+         <div class="logo logo--portfolio">
             <div class="logo-icon"><i class="far fa-paper-plane"></i></div>
             <div class="logo_description"><a class="header-logo__title" href="<?= HOST ?>">Digital Lifestyle</a><a class="header-logo__sub" href="<?= HOST ?>">Сайт IT специалиста</a></div>
          </div>
       </div>
-      <div class="container user-content">
+      <div class="container user-content user-content--custom">
          <div class="row">
-            <div class="col-md-10 mt-25 mb-10 offset-md-1 my-portfolio__row">
+            <div class="col-md-10 mt-25 mb-10 offset-md-1">
                <h1><?=$portfolio['title']?></h1>
 
                <?php if (isAdmin()) { ?>

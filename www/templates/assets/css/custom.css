@@ -47,3 +47,23 @@ ul {
 .my-portfolio__row .button {
   max-height: 45px;
 }
+
+.logo--portfolio {
+  color: #000;
+}
+
+.user-content--custom h1 {
+  display: inline-block;
+  width: 63%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.user-content--custom .button--remove {
+  float: right;
+  margin-left: 30px;
+}
+
+.user-content--custom .button--edit {
+  float: right;
+}
