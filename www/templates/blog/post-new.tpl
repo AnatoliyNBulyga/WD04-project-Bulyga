@@ -37,7 +37,8 @@
 						<input class="inputfile" type="file" name="postImg" id="file" />
 
 						<label class="label-input-file" for="file">Изображение</label>
-						<span>Файл не выбран</span></div>
+						<span>Файл не выбран</span>
+					</div>
 					<div class="form-group">
 						<label class="label">Содержание поста
 							<textarea id="ckEditor" class="textarea" name="postText" type="type" placeholder="Введите содеражание поста"></textarea>

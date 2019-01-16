@@ -63,3 +63,12 @@ ul {
 .user-content--custom .button--edit {
   float: right;
 }
+.card-item {
+  display: block;
+}
+.card-item .card-post__img {
+  display: inline-block;
+}
+.card-price-holder {
+  display: flex;
+}
