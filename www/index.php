@@ -163,6 +163,28 @@ switch ( $uri[0] ) {
 		include "modules/portfolio/project-delete.php";
 		break;	
 
+// ::::::::::::::::::::: E-SHOP ::::::::::::::::::::::::::::
+
+		case 'shop':
+			include "modules/shop/index.php";
+			break;
+
+		case 'shop/new':
+			include ROOT . "modules/shop/item-new.php";
+			break;
+
+		case 'shop/item':
+			include ROOT . "modules/shop/item.php";
+			break;
+
+		case 'shop/item-edit':
+			include ROOT . "modules/shop/item-edit.php";
+			break;
+
+		case 'shop/item-delete.php':
+			include ROOT . "modules/shop/item-delete.php";
+			break;
+
 // :::::::::::::::::::::404::::::::::::::::::::::::::::::::::	
 
 	default:
