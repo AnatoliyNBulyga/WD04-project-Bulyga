@@ -21,7 +21,7 @@ if ( isset($_POST['itemNew'])) {
 		$item -> title = htmlentities($_POST['title']);
 		$item -> price = htmlentities($_POST['price']);
 		$item -> priceOld = htmlentities($_POST['priceOld']);
-		$item -> desc = htmlentities($_POST['itemDesc']);
+		$item -> desc = $_POST['itemDesc'];
 
 		if ( isset($_FILES['itemImg']['name']) && $_FILES['itemImg']['tmp_name'] != "" ) {
 			
@@ -82,11 +82,10 @@ if ( isset($_POST['itemNew'])) {
 			$img->writeImage($resized_file);
 			$item->itemImgSmall = "320-" . $db_file_name;
 	 	}
+	 	R::store($item);
+		header('Location: ' . HOST . "shop?result=itemCreated");
+		exit();
 	}
-
-	R::store($item);
-	header('Location: ' . HOST . "shop?result=itemCreated");
-	exit();
 
 }
 

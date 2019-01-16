@@ -3,9 +3,9 @@
 
 		<?php if ( isAdmin() ) { ?>
 			<div class="row">
-				<div class="blog-full-post__button-edit postition-static">
+				<div class="ml-auto mb-30">
 					<a href="<?=HOST?>shop/item-edit?id=<?=$item['id']?>" class="button button--edit">Редактировать</a>
-					<a href="<?=HOST?>shop/item-delete?id=<?=$item['id']?>" class="button button--del">Удалить</a>
+					<a href="<?=HOST?>shop/item-delete?id=<?=$item['id']?>" class="button button--remove button--del ml-10">Удалить</a>
 				</div>
 			</div>
 		<?php } ?>
@@ -13,15 +13,21 @@
 		<div class="row">
 
 			<?php if ( $item['item_img'] != "" ) {  ?>
-				<div class="col">
-					<div class="blog__image">
+				<div class="col-6">
+					<div class="blog__image mb-100 text-center">
 						<img src="<?=HOST?>usercontent/shop/<?=$item['item_img']?>" alt="<?=$item['title']?>">
 					</div>
+				</div>
+			<?php } else { ?>
+				<div class="col-6">
+					<div class="blog__image mb-100 text-center">
+						<img class="blog__image mb-100 text-center" src="<?=HOST?>usercontent/blog-no-image.jpg" alt="<?=$item->title?>">	
+					</div>		
 				</div>
 			<?php } ?>
 
 			<!-- Item desc -->
-			<div class="col pt-40">
+			<div class="col-6">
 				<h1 class="blog__heading"><?=$item['title']?></h1>
 
 				<div class="price-holder">
