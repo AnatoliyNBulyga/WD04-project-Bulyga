@@ -6,11 +6,11 @@
 					<div class="post-row-top">
 
 						<h1><?=$post['title']?></h1>
-						<div class="button-right-top">
+						<div class="button-right-top ml-10">
 							<?php if ( isAdmin() ) { ?>		
 								<a class="button button--edit mt-25" href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">Редактировать</a>
 
-								<a class="button button--remove mt-25" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>">Удалить</a>	
+								<a class="button button--remove mt-25 ml-10" href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>">Удалить</a>	
 							<?php } ?>
 						</div>
 					</div>
@@ -47,7 +47,16 @@
 						<?=$post['text']?>
 					</div>
 				</div>
-				<div class="post-buttons-navigation"><a class="button button--icon-left" href="#"><i class="fas fa-arrow-left"></i>Назад</a><a class="button button--icon-right button-blog-next" href="#">Вперёд<i class="fas fa-arrow-right"></i></a></div>
+				<div class="post-buttons-navigation">
+					<?php if ( $prevId != '' ) { ?>
+						<a class="button button--icon-left" href="<?=HOST?>blog/post?id=<?=$prevId;?>"><i class="fas fa-arrow-left"></i>Назад</a>	
+					<?php } ?> 
+
+					<?php if ( $nextId != '' ) { ?>
+						<a class="button button--icon-right button-blog-next" href="<?=HOST?>blog/post?id=<?=$nextId;?>">Вперёд<i class="fas fa-arrow-right"></i></a>
+					<?php } ?> 
+
+				</div>
 
 				<!-- Вывод комментариев-->
 				<?php include ROOT . "templates/blog/_comment-card.tpl" ?>	

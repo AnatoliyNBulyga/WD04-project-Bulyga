@@ -21,5 +21,14 @@
 
 			<?php } ?>
 		</div>
+		<div class="row">
+			<div class="pagination">
+				<a href="#" class="pagination__item pagination__item--active">1</a>
+				<a href="#" class="pagination__item">2</a>
+				<a href="#" class="pagination__item">3</a>
+				<a href="#" class="pagination__item">4</a>
+				<a href="#" class="pagination__item">5</a>
+			</div>
+		</div>
 	</div>
 </div>

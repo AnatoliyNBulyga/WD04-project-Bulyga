@@ -181,7 +181,7 @@ switch ( $uri[0] ) {
 			include ROOT . "modules/shop/item-edit.php";
 			break;
 
-		case 'shop/item-delete.php':
+		case 'shop/item-delete':
 			include ROOT . "modules/shop/item-delete.php";
 			break;
 

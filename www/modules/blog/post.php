@@ -23,6 +23,17 @@ $sqlComments = '
 
 $comments = R::getAll( $sqlComments );
 
+$postsId = R::getCol('SELECT id FROM posts');
+foreach ($postsId as $index => $id) {
+
+	if ( $id == $post['id'] ) {
+		@$nextId = $postsId[$index + 1];
+		@$prevId = $postsId[$index - 1];
+		break;
+	}
+
+}
+
 $title = $post['title'];
 
 if ( isset($_POST['addComment']) ) {

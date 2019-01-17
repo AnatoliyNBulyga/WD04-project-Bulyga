@@ -412,6 +412,7 @@ body::before {
 .label {
   display: block;
   margin-bottom: 20px;
+  line-height: 40px;
 }
 
 .highlight {
@@ -512,4 +513,11 @@ a.card__select {
 }
 .card-price-holder {
   display: flex;
+}
+.button-right-top {
+  white-space: nowrap;
+}
+.pagination__item--active {
+  background-color: #3866c5;
+  color: #FFF;
 }

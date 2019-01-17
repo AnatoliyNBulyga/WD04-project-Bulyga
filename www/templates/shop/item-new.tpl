@@ -19,7 +19,7 @@
 			</div>
 			<div class="col">
 				<div class="form-group">
-					<label class="label">Название
+					<label class="label">Старая цена
 						<input type="text" class="input" placeholder="Введите старую цену" name="priceOld">
 					</label>
 				</div>
@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="form-group">
-			<label class="label">Содержание поста
+			<label class="label">Описание товара
 				<textarea id="ckEditor" class="textarea" rows="7" name="itemDesc" type="type" placeholder="Введите описание товара"></textarea>
 				<?php include_once ROOT . 'templates/_parts/_ckEditorConnect.tpl'; ?>
 			</label>
