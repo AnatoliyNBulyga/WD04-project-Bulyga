@@ -124,8 +124,9 @@ function mbCutString ($string, $length, $postfix = '...', $encoding = 'UTF-8' ) 
 
 }
 
-// Пагинация страниц
-function pagination($results_per_page, $type){
+/* Пагинация */
+function pagination($results_per_page, $type) {
+	
 	$number_of_results = R::count($type);
 	$number_of_pages = ceil($number_of_results / $results_per_page);
 
@@ -140,12 +141,9 @@ function pagination($results_per_page, $type){
 
 	$result['number_of_pages'] = $number_of_pages; // 3
 	$result['page_number'] = $page_number; // 2
-	$result['sql_pages_limit'] = $sql_pages_limit; // LIMIT 3,3
-	return $result;
-}
+	$result['sql_pages_limit'] = $sql_pages_limit; // LIMIT 6,3
 
-function price_format($price) {
-	return number_format($price, 0, '', ' ');
+	return $result;
 }
 
 ?>
