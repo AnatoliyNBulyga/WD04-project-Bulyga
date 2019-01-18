@@ -185,6 +185,13 @@ switch ( $uri[0] ) {
 			include ROOT . "modules/shop/item-delete.php";
 			break;
 
+// ::::::::::::::::::::: E-SHOP ::::::::::::::::::::::::::::
+
+		case 'addtocart':
+		include ROOT . "modules/cart/addtocart.php";
+		break;			
+
+
 // :::::::::::::::::::::404::::::::::::::::::::::::::::::::::	
 
 	default:

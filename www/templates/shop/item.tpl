@@ -41,16 +41,14 @@
 					</div>
 				</div>
 
-				<a href="#!" class="button mb-15" id="addToCart">В корзину</a>
+				<form action="<?=HOST.'addtocart'?>" method="POST" id="addToCart">
+					<input type="hidden" name="itemId" id="itemId" value="<?=$item['id']?>">
+					<input type="submit" class="button mb-15" name="addToCart" value="В корзину">
+				</form>
 
 				<div class="user-content">
 					<?=$item['desc']?>
 				</div>
-
-				<!-- <form action="<?=HOST.'addtocart'?>" method="POST" id="addToCart">
-					<input type="hidden" name="itemId" id="itemId" value="<?=$item['id']?>">
-					<input type="submit" class="button mb-15" name="addToCart" value="В корзину">
-				</form> -->
 				
 			</div>
 			<!-- // Item desc -->

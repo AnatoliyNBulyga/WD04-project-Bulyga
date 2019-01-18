@@ -1,10 +1,10 @@
 <?php 
 
-// $pagination = pagination(6, 'goods');
+$pagination = pagination(3, 'goods');
 $title = "Все торвары - магазин";
 
-$goods = R::find('goods', 'ORDER BY id DESC');
-// . $pagination['sql_pages_limit']
+$goods = R::find('goods', 'ORDER BY id DESC '. $pagination['sql_pages_limit']);
+
 
 // Готовим контент для центральной части
 ob_start();

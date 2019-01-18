@@ -3,6 +3,7 @@
 unset($_SESSION['logget_user']);
 unset($_SESSION['login']);
 unset($_SESSION['role']);
+SetCookie("cart", "");
 session_destroy();
 setcookie(session_name(), '', time() - 1, '/');
 header("Location: " . HOST);

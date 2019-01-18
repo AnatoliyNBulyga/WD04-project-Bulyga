@@ -1,4 +1,5 @@
 	<script src="<?=HOST?>templates/assets/libs/jquery/jquery.min.js"></script>
+	<script src="<?=HOST?>libs/jquery.cookie.js"></script>
 	<!-- <script src="<?=HOST?>templates/assets/js/check-registration.js"></script> -->
 	<script src="<?=HOST?>templates/assets/js/check-login.js"></script>
 	<script src="<?=HOST?>templates/assets/js/check-comment.js"></script>
